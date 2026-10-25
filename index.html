@@ -74,19 +74,35 @@ h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.015em;text-wrap:ba
 @keyframes pop{from{opacity:0;transform:scale(.9)}}
 .conf{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:14px;margin-top:auto;padding-top:12px;border-top:1px dashed var(--line)}
 /* avails */
-.av{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;align-items:start}
-.cert{padding:26px;background:linear-gradient(160deg,#f6f1e6,#e9e2d1);color:#1b2333;border-radius:18px;position:relative;box-shadow:0 30px 80px -30px rgba(0,0,0,.8);overflow:hidden}
-.cert::after{content:"";position:absolute;right:20px;bottom:20px;width:86px;height:86px;border-radius:50%;border:3px double var(--plum);opacity:.5}
-.cert header{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1b2333;padding-bottom:12px;margin-bottom:14px;gap:10px}
-.cert header b{font:800 22px var(--display)}.cert .mono{color:#5b6475}
-.ptabs{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:14px}
-.ptabs button{all:unset;cursor:pointer;text-align:center;padding:9px 0;border-radius:8px;font:700 15px var(--display);background:rgba(27,35,51,.08);transition:.2s}
-.ptabs button[aria-selected=true]{background:#1b2333;color:#f6f1e6}.ptabs button:focus-visible{outline:2px solid var(--orange)}
-.ppanel h4{margin:0 0 12px;font:800 22px var(--display)}
-.lines{display:grid;gap:10px}.lines div{display:grid;grid-template-columns:120px 1fr;gap:10px;align-items:end;font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:#5b6475}
-.lines div span{border-bottom:1px dotted #8a93a3;height:16px}
-.sig{display:flex;justify-content:space-between;margin-top:22px;font:500 11px var(--mono);color:#5b6475;gap:14px}.sig span{flex:1;border-top:1px solid #1b2333;padding-top:6px}
-.illu{position:absolute;top:12px;right:-34px;transform:rotate(35deg);background:var(--orange);color:#fff;font:600 10px var(--mono);padding:4px 40px;letter-spacing:.1em}
+#avails .sec-head{text-align:center;display:flex;flex-direction:column;align-items:center}
+.av2{display:grid;gap:22px;max-width:900px;margin:0 auto;justify-items:stretch}
+.vw{position:relative;border-radius:22px;padding:22px 22px 26px;background:linear-gradient(160deg,rgba(24,34,66,.85),rgba(10,16,34,.92));border:1px solid var(--line);box-shadow:0 40px 90px -40px rgba(0,0,0,.9),0 0 80px -30px rgba(255,122,26,.35),inset 0 1px 0 rgba(255,255,255,.06);overflow:hidden}
+.vw::before{content:"";position:absolute;width:420px;height:420px;left:50%;top:48%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,122,26,.18),rgba(255,60,120,.1) 45%,transparent 70%);pointer-events:none}
+.vw>*{position:relative}
+.vw-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px;color:var(--muted,#9aa6c4);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.vw-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--orange);margin-right:8px;box-shadow:0 0 12px var(--orange)}
+.ptabs{display:flex;justify-content:center;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.ptabs button{all:unset;cursor:pointer;text-align:center;width:46px;padding:10px 0;border-radius:12px;font:800 15px var(--display);color:#cdd6f0;background:rgba(255,255,255,.06);border:1px solid var(--line);transition:.25s}
+.ptabs button:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.ptabs button[aria-selected=true]{color:#fff;background:linear-gradient(135deg,#ff7a1a,#ff3c78);border-color:transparent;box-shadow:0 8px 24px -6px rgba(255,90,60,.7)}
+.ptabs button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.vw-stage{display:grid;grid-template-columns:52px 1fr 52px;align-items:center;gap:14px}
+.vw-ar{all:unset;cursor:pointer;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:20px;color:#fff;background:rgba(255,255,255,.08);border:1px solid var(--line);transition:.25s}
+.vw-ar:hover{background:linear-gradient(135deg,#ff7a1a,#ff3c78);border-color:transparent;transform:scale(1.08)}
+.vw-ar:focus-visible{outline:2px solid #fff}.vw-ar:disabled{opacity:.25;cursor:default;transform:none;background:rgba(255,255,255,.05)}
+.ppanel{display:flex;flex-direction:column;align-items:center;text-align:center}
+.vw-meta{margin-bottom:14px}.vw-meta .mono{color:var(--orange);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.ppanel h4{margin:4px 0 0;font:800 24px var(--display);color:#fff}
+.pg{all:unset;cursor:zoom-in;display:flex;flex-direction:column;align-items:center;gap:16px}
+.pg img{height:min(64vh,600px);width:auto;max-width:100%;object-fit:contain;display:block;border-radius:8px;background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 30px 70px -20px rgba(0,0,0,.9),0 0 60px -10px rgba(255,122,26,.45);transition:transform .5s,box-shadow .4s}
+.pg:hover img{transform:translateY(-4px) scale(1.01);box-shadow:0 0 0 1px rgba(255,255,255,.2),0 36px 80px -20px rgba(0,0,0,.9),0 0 80px -6px rgba(255,122,26,.7)}
+.pg:focus-visible img{outline:2px solid var(--orange)}
+.pg .zm{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;background:linear-gradient(90deg,#ff7a1a,#ff3c78);color:#fff;font:700 12px var(--mono);padding:10px 18px;border-radius:999px;box-shadow:0 8px 26px rgba(255,90,60,.5);animation:zmp 2s ease-in-out infinite}
+.pg .zm svg{width:16px;height:16px;flex:none}
+@keyframes zmp{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.pg:hover .zm{animation:none;transform:scale(1.06)}
+@media(prefers-reduced-motion:reduce){.pg .zm{animation:none}}
+@media(max-width:620px){.vw{padding:16px 12px 20px}.vw-stage{grid-template-columns:1fr;}.vw-ar{display:none}.pg img{height:auto;width:100%}.ptabs button{width:40px}.vw-h{display:none}}
 .who{display:grid;gap:14px}.who .row .pill{flex:1;text-align:center}
 .who-panel{padding:24px;min-height:170px;display:grid;gap:10px;align-content:start}.who-panel h3{font-size:24px}.who-panel p{margin:0;color:#c9d4e4}
 .who-panel .big{font:800 54px/1 var(--display)}
@@ -198,20 +214,6 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 .vg{grid-template-columns:repeat(6,1fr)}.vg button{grid-column:span 2}.vg button.wide{grid-column:span 3;aspect-ratio:16/9}
 @media(max-width:980px){.pa button,.pa button:nth-child(4),.pa button:nth-child(5){grid-column:span 3}.vg button{grid-column:span 3}.vg button.wide{grid-column:span 6}}
 @media(max-width:640px){.pa button,.pa button:nth-child(4),.pa button:nth-child(5){grid-column:1/-1;min-height:0}.pa .hc{max-height:120px;opacity:1}}
-.pg{all:unset;cursor:zoom-in;display:block;margin-top:4px;border-radius:10px;overflow:hidden;border:1px solid #c9bfa8;position:relative;box-shadow:0 14px 34px -14px rgba(27,35,51,.55)}
-.ppanel{display:grid;grid-template-columns:minmax(200px,330px) 1fr;gap:0 22px;align-content:start}
-.ppanel>.pg{grid-column:1;grid-row:1/span 4}.ppanel>:not(.pg){grid-column:2}.ppanel>.pnav{align-self:end;grid-row:4}
-@media(max-width:560px){.ppanel{grid-template-columns:1fr}.ppanel>.pg,.ppanel>:not(.pg){grid-column:1;grid-row:auto}}
-.pg img{width:100%;display:block;transition:transform .5s}.pg:hover img{transform:scale(1.03)}.pg:focus-visible{outline:2px solid var(--orange)}
-.pg .zm{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;white-space:nowrap;background:linear-gradient(90deg,#ff7a1a,#ffb347);color:#1b2333;font:700 11px var(--mono);padding:8px 12px;border-radius:999px;box-shadow:0 6px 22px rgba(255,122,26,.45);animation:zmp 2s ease-in-out infinite}
-.pg .zm svg{width:16px;height:16px;flex:none}
-.pg .zm{z-index:2}.pg:hover .zm{animation:none;transform:translateX(-50%) scale(1.06)}
-@keyframes zmp{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.07)}}
-@media(prefers-reduced-motion:reduce){.pg .zm{animation:none}}
-.pg-hint{display:flex;gap:18px;flex-wrap:wrap;font:600 11px var(--mono);letter-spacing:.06em;color:#7a6f58;margin:10px 0 14px}
-.pg-hint b{color:#c8570a}
-.pnav{display:flex;justify-content:space-between;margin-top:12px}.pnav button{background:#1b2333;color:#f6f1e6;border:0;border-radius:8px;padding:8px 12px;font-weight:700}
-.pnav button:disabled{visibility:hidden}
 .modal img{max-width:min(100%,900px);max-height:86vh;border-radius:8px;background:#fff;overflow:auto}
 
 /* rights strip (rs-) */
@@ -363,12 +365,12 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 
 <section class="sec" id="avails"><div class="wrap">
 <div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Avails Certificate</span><h2>One document. <span class="grad">Ownership and right to sell.</span></h2></div>
-<div class="av reveal">
-<div class="cert" aria-label="Illustrative certificate layout"><span class="illu">SAMPLE</span>
-<header><b>Avails Certificate</b><span class="mono">Blank template</span></header>
-<p class="pg-hint"><span><b>①</b> Pick a part A–H</span><span><b>②</b> Click the page to zoom</span><span><b>③</b> Use ← → to move on</span></p><div class="ptabs" role="tablist" id="ptabs" aria-label="Certificate parts"></div>
-<div class="ppanel" id="ppanel" role="tabpanel"></div>
-<div class="sig"><span>Seller</span><span>Practising advocate</span></div></div>
+<div class="av2 reveal">
+<div class="vw">
+<div class="vw-bar"><span class="mono"><i class="vw-dot"></i>Sample · blank template</span><span class="mono vw-h">Pick a part · click the page to zoom</span></div>
+<div class="ptabs" role="tablist" id="ptabs" aria-label="Certificate parts"></div>
+<div class="vw-stage"><button class="vw-ar" id="pprev" aria-label="Previous part">←</button><div class="ppanel" id="ppanel" role="tabpanel"></div><button class="vw-ar" id="pnext" aria-label="Next part">→</button></div>
+</div>
 <div class="who"><div class="row" role="group" aria-label="View for" id="whob"></div><div class="card who-panel" id="whop" aria-live="polite"></div></div>
 </div></div></section>
 
@@ -477,12 +479,13 @@ $('dlist').addEventListener('click',e=>{const b=e.target.closest('button');if(b)
 function arrows(el,fn,n,get){el.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key];if(!k)return;e.preventDefault();fn((get()+k+n)%n,true)})}
 arrows($('dlist'),selDoc,DOCS.length,()=>cur);$('q').addEventListener('input',renderDocs);renderDocs();
 // avails
-const PG=[1,1,2,2,2,2,3,3];const PARTS=[['Certificate details',['Certificate no.','Date of issue','Issued for']],['Rights holder details',['Name','Address','Authorised signatory']],['Content details',['Title','Format','Duration']],['Rights availability',['Territory','Exclusivity','Licence duration']],['Rights types available',['Rights type','Available','Notes']],['Language rights',['Dubbing','Subtitling','Languages']],['Encumbrances, existing licences and restrictions',['Existing licences','Restrictions','Encumbrances']],['Seller declaration',['Declaration','Seller','Date']]];
-let pc=0;$('ptabs').innerHTML=PARTS.map((p,i)=>`<button role="tab" id="pt${i}" aria-selected="${i===0}" tabindex="${i?-1:0}" aria-label="Part ${'ABCDEFGH'[i]}: ${p[0]}">${'ABCDEFGH'[i]}</button>`).join('');
+const PG=[1,1,2,2,2,2,3,3,4];const PARTS=[['Certificate details',['Certificate no.','Date of issue','Issued for']],['Rights holder details',['Name','Address','Authorised signatory']],['Content details',['Title','Format','Duration']],['Rights availability',['Territory','Exclusivity','Licence duration']],['Rights types available',['Rights type','Available','Notes']],['Language rights',['Dubbing','Subtitling','Languages']],['Encumbrances, existing licences and restrictions',['Existing licences','Restrictions','Encumbrances']],['Seller declaration',['Declaration','Seller','Date']],['Certification by legal professional',['Advocate','Enrolment no.','Seal']]];
+let pc=0;$('ptabs').innerHTML=PARTS.map((p,i)=>`<button role="tab" id="pt${i}" aria-selected="${i===0}" tabindex="${i?-1:0}" aria-label="Part ${'ABCDEFGHJ'[i]}: ${p[0]}">${'ABCDEFGHJ'[i]}</button>`).join('');
 function selPart(i,f){pc=i;[...$('ptabs').children].forEach((b,k)=>{b.setAttribute('aria-selected',k===i);b.tabIndex=k===i?0:-1});if(f)$('ptabs').children[i].focus();const p=PARTS[i];
- $('ppanel').setAttribute('aria-labelledby','pt'+i);$('ppanel').innerHTML=`<span class="mono">Part ${'ABCDEFGH'[i]}</span><h4>${p[0]}</h4><button class="pg" id="pgb" aria-label="Zoom page ${PG[i]} of the sample certificate"><img src="assets/img/avails-p-${PG[i]}.jpg" alt="Sample Avails Certificate, page ${PG[i]}" style="object-fit:contain"><span class="zm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5M10.5 7.5v6M7.5 10.5h6"/></svg>Click to zoom · page ${PG[i]} of 4</span></button><div class="pnav"><button id="pprev" ${i?'':'disabled'}>← Part ${'ABCDEFGH'[i-1]||''}</button><button id="pnext" ${i<7?'':'disabled'}>Part ${'ABCDEFGH'[i+1]||''} →</button></div>`;
- $('pprev').onclick=()=>i&&selPart(i-1);$('pnext').onclick=()=>i<7&&selPart(i+1);$('pgb').onclick=e=>openImg(e.currentTarget,`assets/img/avails-p-${PG[i]}.jpg`,'Avails Certificate · sample page '+PG[i])}
-$('ptabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)selPart([...$('ptabs').children].indexOf(b))});arrows($('ptabs'),selPart,8,()=>pc);selPart(0);
+ $('ppanel').setAttribute('aria-labelledby','pt'+i);$('ppanel').innerHTML=`<div class="vw-meta"><span class="mono">Part ${'ABCDEFGHJ'[i]} · page ${PG[i]} of 4</span><h4>${p[0]}</h4></div><button class="pg" id="pgb" aria-label="Zoom page ${PG[i]} of the sample certificate"><img src="assets/img/avails-p-${PG[i]}.jpg" alt="Sample Avails Certificate, page ${PG[i]}"><span class="zm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5M10.5 7.5v6M7.5 10.5h6"/></svg>Click to zoom</span></button>`;
+ $('pprev').disabled=!i;$('pnext').disabled=i>7;$('pgb').onclick=e=>openImg(e.currentTarget,`assets/img/avails-p-${PG[i]}.jpg`,'Avails Certificate · sample page '+PG[i])}
+$('pprev').onclick=()=>pc&&selPart(pc-1);$('pnext').onclick=()=>pc<8&&selPart(pc+1);
+$('ptabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)selPart([...$('ptabs').children].indexOf(b))});arrows($('ptabs'),selPart,9,()=>pc);selPart(0);
 const WHO=[['For buyers','👁','Verify ownership and authority to sell','Review one document to see who owns the film and who may sell it.'],['For sellers','↻','Reuse for every later licence','On Media Shippers and whenever the film is licensed again.'],['Accountability','✍','Signed by a practising advocate','Not self-certified by the seller.']];
 $('whob').innerHTML=WHO.map((w,i)=>`<button class="pill" aria-pressed="${i===0}" data-i="${i}">${w[0]}</button>`).join('');
 function who(i){[...$('whob').children].forEach((b,k)=>b.setAttribute('aria-pressed',k===i));const w=WHO[i];$('whop').style.setProperty('--c',['var(--orange)','var(--blue)','var(--red)'][i]);$('whop').innerHTML=`<span class="big">${w[1]}</span><h3>${w[2]}</h3><p>${w[3]}</p>`}
