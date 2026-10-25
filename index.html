@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Media Shippers Legal Services</title>
+<link rel="icon" href="assets/img/favicon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--ink:#081120;--panel:#0e1a2c;--panel2:#12223a;--line:#1f3150;--fg:#f2f5fa;--muted:#94a4be;--orange:#F26A1B;--blue:#0F7DBF;--yellow:#F7B500;--red:#E21F4F;--plum:#9B1650;--teal:#1BA39C;
+--display:"Bricolage Grotesque",system-ui,sans-serif;--body:"Figtree",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;
+--speed:linear-gradient(90deg,var(--yellow),var(--orange) 40%,var(--red) 75%,var(--plum));color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}
+body{margin:0;background:var(--ink);color:var(--fg);font:16px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}:focus-visible{outline:2px solid var(--yellow);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:16px}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.015em;text-wrap:balance}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--yellow)}
+.mono{font:500 11px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sec{padding-block:96px 16px}.sec-head{display:grid;gap:12px;margin-bottom:30px;max-width:780px}
+.sec-head h2{font-size:clamp(32px,5vw,56px);line-height:1.02;font-weight:800}.sec-head p{margin:0;color:var(--muted);font-size:17px}
+.speed{display:grid;gap:5px;width:140px}.speed i{display:block;height:5px;border-radius:5px;background:var(--speed)}
+.speed i:nth-child(1){width:62%;margin-left:30%}.speed i:nth-child(3){width:74%;margin-left:12%}
+.grad{background:var(--speed);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{position:relative;border-radius:18px;background:linear-gradient(var(--panel),var(--panel)) padding-box,linear-gradient(150deg,color-mix(in srgb,var(--c,var(--blue)) 70%,transparent),var(--line) 45%) border-box;border:1px solid transparent}
+.pill{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:9px 16px;font-weight:600;font-size:14px;transition:.2s}
+.pill:hover{border-color:var(--muted)}.pill[aria-pressed=true],.pill[aria-selected=true]{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}*{animation:none!important;transition:none!important}}
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(8,17,32,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.nav img{height:34px;display:block}.nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.nav ul a{display:block;text-decoration:none;font-weight:600;font-size:13.5px;padding:8px 10px;border-radius:8px;color:var(--muted)}
+.nav ul a:hover,.nav ul a.active{color:var(--fg);background:rgba(255,255,255,.07)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+/* hero */
+.lead{margin:0;max-width:52ch;color:#c9d4e4;font-size:clamp(16px,2vw,19px)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;padding:13px 22px;border-radius:12px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.04)}
+.btn:hover{border-color:var(--fg)}.btn.solid{background:var(--speed);border:0;color:#fff}
+@keyframes float{50%{transform:translate(40px,-30px)}}
+.hero-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;width:100%;max-width:760px;margin-top:10px}
+.hero-tiles a{text-decoration:none;padding:16px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(14,26,44,.7);transition:.25s;display:grid;gap:4px}
+.hero-tiles a:hover{transform:translateY(-4px);border-color:var(--orange)}.hero-tiles b{font-family:var(--display);font-size:28px}
+.ticker{overflow:hidden;border-block:1px solid var(--line);background:var(--panel);padding-block:12px}
+.ticker .track{display:flex;width:max-content;animation:tick 40s linear infinite}.ticker:hover .track{animation-play-state:paused}
+.ticker .grp{display:flex;align-items:center;gap:18px;padding-right:18px;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.ticker b{color:var(--fg);font-weight:500}.ticker .dot{width:5px;height:5px;border-radius:50%;background:var(--orange)}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* practice */
+.pa{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.pa button{all:unset;cursor:pointer;box-sizing:border-box;padding:22px 18px;min-height:190px;display:grid;align-content:space-between;gap:14px;border-radius:18px;border:1px solid var(--line);background:var(--panel);transition:.3s;position:relative;overflow:hidden}
+.pa button::before{content:"";position:absolute;inset:auto -30% -60% auto;width:160px;height:160px;border-radius:50%;background:var(--c);opacity:.18;transition:.4s}
+.pa button:hover::before,.pa button[aria-expanded=true]::before{opacity:.55;transform:scale(1.4)}
+.pa button:hover{transform:translateY(-4px);border-color:var(--c)}.pa button[aria-expanded=true]{border-color:var(--c)}
+.pa .ic{font:800 34px/1 var(--display);color:var(--c)}.pa h3{font-size:20px}.pa p{margin:0;color:#c9d4e4;font-size:14px;max-height:0;overflow:hidden;transition:max-height .35s}
+.pa button[aria-expanded=true] p,.pa button:hover p{max-height:80px}
+/* docs explorer */
+.dx{display:grid;grid-template-columns:330px 1fr;gap:16px}
+.dx-list{display:grid;gap:6px;align-content:start}
+.dx-list button{all:unset;cursor:pointer;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel);font-weight:600;font-size:14.5px;transition:.2s}
+.dx-list button:hover{border-color:var(--muted)}.dx-list button[aria-selected=true]{background:var(--teal);border-color:var(--teal);color:#fff}
+.dx-list .n{font:500 11px var(--mono);opacity:.8;flex-shrink:0;padding:3px 7px;border-radius:6px;background:rgba(255,255,255,.08)}
+.dx-list button.dim{opacity:.3}
+.dx-room{padding:28px;min-height:420px;--c:var(--teal);display:grid;align-content:start;gap:18px}
+.dx-room h3{font-size:clamp(24px,3vw,34px)}
+.dx-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.search{flex:1;min-width:220px;padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--fg);font:inherit}
+.counter{font:500 13px var(--mono);color:var(--muted)}.counter b{color:var(--yellow);font-size:20px}
+.subchips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.subchips li{padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);font-size:14px;animation:pop .35s both}
+.subchips li mark{background:var(--yellow);color:var(--ink);border-radius:3px}
+.subchips li small{display:block;font:500 10px var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+@keyframes pop{from{opacity:0;transform:scale(.9)}}
+.conf{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:14px;margin-top:auto;padding-top:12px;border-top:1px dashed var(--line)}
+/* avails */
+.av{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}
+.cert{padding:26px;background:linear-gradient(160deg,#f6f1e6,#e9e2d1);color:#1b2333;border-radius:18px;position:relative;box-shadow:0 30px 80px -30px rgba(0,0,0,.8);overflow:hidden}
+.cert::after{content:"";position:absolute;right:20px;bottom:20px;width:86px;height:86px;border-radius:50%;border:3px double var(--plum);opacity:.5}
+.cert header{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1b2333;padding-bottom:12px;margin-bottom:14px;gap:10px}
+.cert header b{font:800 22px var(--display)}.cert .mono{color:#5b6475}
+.ptabs{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:14px}
+.ptabs button{all:unset;cursor:pointer;text-align:center;padding:9px 0;border-radius:8px;font:700 15px var(--display);background:rgba(27,35,51,.08);transition:.2s}
+.ptabs button[aria-selected=true]{background:#1b2333;color:#f6f1e6}.ptabs button:focus-visible{outline:2px solid var(--orange)}
+.ppanel h4{margin:0 0 12px;font:800 22px var(--display)}
+.lines{display:grid;gap:10px}.lines div{display:grid;grid-template-columns:120px 1fr;gap:10px;align-items:end;font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:#5b6475}
+.lines div span{border-bottom:1px dotted #8a93a3;height:16px}
+.sig{display:flex;justify-content:space-between;margin-top:22px;font:500 11px var(--mono);color:#5b6475;gap:14px}.sig span{flex:1;border-top:1px solid #1b2333;padding-top:6px}
+.illu{position:absolute;top:12px;right:-34px;transform:rotate(35deg);background:var(--orange);color:#fff;font:600 10px var(--mono);padding:4px 40px;letter-spacing:.1em}
+.who{display:grid;gap:14px}.who .row .pill{flex:1;text-align:center}
+.who-panel{padding:24px;min-height:170px;display:grid;gap:10px;align-content:start}.who-panel h3{font-size:24px}.who-panel p{margin:0;color:#c9d4e4}
+.who-panel .big{font:800 54px/1 var(--display)}
+/* tabs generic */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.qa{display:grid;grid-template-columns:1fr 1.2fr;gap:20px;align-items:center}
+.qa-screen{padding:20px;min-height:280px;font-size:14px;display:grid;gap:10px;align-content:start;--c:var(--blue)}
+.qa-screen .bar{display:flex;gap:6px}.qa-screen .bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.ghost{height:12px;border-radius:6px;background:rgba(255,255,255,.07)}
+.bubble{padding:12px 14px;border-radius:12px;background:var(--panel2);border:1px solid var(--line)}
+.tagrow{display:flex;gap:6px;flex-wrap:wrap}.tagrow span{font:500 11px var(--mono);padding:6px 9px;border-radius:6px;background:rgba(15,125,191,.2);color:#9fd3f5}
+.ok{color:var(--teal)}.no{color:var(--red)}
+.qa-copy h3{font-size:clamp(26px,3.4vw,40px)}.qa-copy p{color:#c9d4e4;font-size:17px}
+.proto{display:inline-flex;gap:8px;align-items:center;font:500 12px var(--mono);color:var(--yellow);border:1px dashed var(--yellow);padding:8px 12px;border-radius:10px}
+/* stepper */
+.stepper{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-bottom:18px}
+.stepper::before{content:"";position:absolute;left:10%;right:10%;top:27px;height:3px;background:var(--line)}
+.stepper .fill{position:absolute;left:10%;top:27px;height:3px;background:var(--speed);transition:width .5s}
+.stepper button{all:unset;cursor:pointer;display:grid;justify-items:center;gap:10px;text-align:center;position:relative;z-index:1;font-weight:600;font-size:14px;padding:0 4px}
+.stepper .dotn{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--panel);border:2px solid var(--line);font:800 20px var(--display);transition:.3s}
+.stepper button[aria-selected=true] .dotn,.stepper button.done .dotn{background:var(--orange);border-color:var(--orange);color:#fff}
+.stepper button:focus-visible .dotn{outline:2px solid var(--yellow);outline-offset:3px}
+.step-panel{padding:26px;display:flex;justify-content:space-between;align-items:center;gap:20px;--c:var(--orange)}
+.step-panel h3{font-size:28px}.step-panel p{margin:6px 0 0;color:#c9d4e4}
+/* film rights */
+.fr-grid{display:grid;grid-template-columns:1fr;gap:20px}
+.blk{padding:24px;display:grid;gap:14px;align-content:start}
+.blk h3{font-size:26px}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.check label{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:10px;background:var(--panel2);cursor:pointer;font-size:15px;transition:.2s}
+.check input{appearance:none;width:22px;height:22px;border-radius:6px;border:2px solid var(--muted);flex-shrink:0;display:grid;place-items:center;margin:0}
+.check input:checked{background:var(--teal);border-color:var(--teal)}.check input:checked::after{content:"✓";color:#fff;font-weight:800;font-size:14px}
+.check label:has(input:checked){color:var(--muted);text-decoration:line-through}
+.prog{height:10px;border-radius:6px;background:var(--line);overflow:hidden}.prog i{display:block;height:100%;width:0;background:var(--speed);transition:width .4s}
+.prog-l{display:flex;justify-content:space-between;font:500 13px var(--mono);color:var(--muted)}.prog-l b{color:var(--fg)}
+.slice-info{display:grid;gap:10px;max-width:560px;justify-items:center}.slice-info h4{margin:0;font:800 30px var(--display)}.slice-info p{margin:0;color:#c9d4e4}
+.builder{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.builder label{display:grid;gap:6px}.builder select{padding:11px;border-radius:10px;background:var(--panel2);border:1px solid var(--line);color:var(--fg);font:inherit}
+.deal{font:600 15px var(--mono);padding:14px 16px;border-radius:12px;background:rgba(247,181,0,.1);border:1px dashed var(--yellow);color:var(--yellow)}
+.toggle{display:grid;grid-template-columns:1fr 1fr;border-radius:14px;border:1px solid var(--line);overflow:hidden}
+.toggle button{all:unset;cursor:pointer;text-align:center;padding:14px;font:700 17px var(--display);transition:.3s}
+.toggle button[aria-pressed=true]{background:var(--fg);color:var(--ink)}.toggle button:focus-visible{outline:2px solid var(--yellow);outline-offset:-3px}
+.house{font-size:70px;text-align:center;transition:.4s}.lp{text-align:center;color:#c9d4e4;margin:0;min-height:3em}
+.rules{counter-reset:r;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rules li{counter-increment:r;padding:16px;border-radius:12px;background:var(--panel2);display:grid;gap:4px;transition:.25s}
+.rules li:hover{transform:translateY(-3px);background:#173052}.rules li::before{content:counter(r,decimal-leading-zero);font:500 12px var(--mono);color:var(--orange)}
+.rules b{font-family:var(--display);font-size:17px}.rules span{color:var(--muted);font-size:14px}
+.take{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.flip{perspective:900px;height:170px;background:none;border:0;padding:0}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.flip:hover .in,.flip[aria-pressed=true] .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;padding:22px;display:grid;align-content:center;text-align:left}
+.flip .f{background:var(--panel);border:1px solid var(--line)}.flip .f b{font:800 46px var(--display);color:var(--orange)}.flip .f h3{font-size:21px}
+.flip .b{background:var(--speed);color:#fff;transform:rotateY(180deg);font-size:16px;font-weight:600}
+.remake{display:flex;align-items:center;gap:14px;padding:16px 18px;--c:var(--plum);flex-wrap:wrap}
+.remake b{font:800 22px var(--display)}.remake .arr{font-size:22px;color:var(--orange)}
+/* videos */
+.vg{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.vg button{all:unset;cursor:pointer;position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:9/16;border:1px solid var(--line);transition:.3s}
+.vg button.wide{grid-column:span 2;aspect-ratio:auto}
+.vg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;opacity:.85}
+.vg button:hover img{transform:scale(1.06);opacity:1}.vg button:hover{border-color:var(--orange)}
+.vg .lab{position:absolute;inset:auto 0 0 0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.85));font:700 17px var(--display)}
+.vg .play{position:absolute;top:50%;left:50%;width:58px;height:58px;margin:-29px;border-radius:50%;background:rgba(242,106,27,.92);display:grid;place-items:center;font-size:20px;transition:.3s}
+.vg button:hover .play{transform:scale(1.15)}
+.modal[hidden]{display:none}.modal{position:fixed;inset:0;z-index:100;background:rgba(3,7,14,.94);backdrop-filter:blur(8px);display:grid;place-items:center;padding:16px}
+.modal video{max-width:min(100%,1100px);max-height:84vh;border-radius:14px;background:#000}
+.modal .x{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel);font-size:20px}
+.modal .mt{position:absolute;top:22px;left:20px;font:700 18px var(--display)}
+/* articles */
+.ag{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.art{display:grid;gap:12px;align-content:space-between;text-decoration:none;padding:22px;min-height:210px;transition:transform .2s,box-shadow .2s;transform-style:preserve-3d;will-change:transform}
+.art:hover{box-shadow:0 24px 60px -24px color-mix(in srgb,var(--c) 70%,transparent)}
+.art h3{font-size:19px;line-height:1.2}.art .mono{color:var(--c)}.art .go{font-weight:700;font-size:14px;color:var(--fg);display:flex;justify-content:space-between}
+.art.hide{display:none}
+.more{margin-top:18px}
+/* team etc */
+.tg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:760px;margin:0 auto}
+.person{padding:22px;display:grid;gap:14px;--c:var(--yellow)}
+.av-i{width:64px;height:64px;border-radius:50%;background:var(--speed);display:grid;place-items:center;font:800 22px var(--display);color:#fff}
+.av-i.blank{background:var(--panel2);border:1px dashed var(--line)}
+.person h3{font-size:22px;min-height:1.2em}.person .role{color:var(--muted);min-height:1.4em}
+.person .links{display:flex;gap:8px;flex-wrap:wrap}.person .links a,.person .links span{font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
+.person .links span{color:var(--muted);border-style:dashed;min-width:70px}
+.faq details{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:18px 20px;margin-bottom:10px;transition:.2s}
+.faq details:hover{border-color:var(--muted)}.faq summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between}
+.faq summary::after{content:"+";color:var(--orange);font-size:22px;line-height:1}.faq details[open] summary::after{content:"–"}
+.faq .blank{height:10px;border-radius:5px;background:rgba(255,255,255,.06);margin-top:14px;width:70%}
+.contact-c{padding:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;--c:var(--orange)}
+.contact-c h3{font-size:clamp(26px,4vw,44px)}.contact-c .row a{overflow-wrap:anywhere}
+footer{margin-top:80px;border-top:1px solid var(--line);padding-block:30px;color:var(--muted);font-size:14px}
+footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-width:80ch;color:#c9d4e4;margin:0}
+@media(max-width:1100px){.nav ul{display:none}.burger{display:block}.nav ul.open{display:grid;position:absolute;top:100%;left:0;right:0;background:var(--ink);padding:10px 16px;border-bottom:1px solid var(--line)}}
+@media(max-width:980px){.pa{grid-template-columns:repeat(2,1fr)}.pa button p{max-height:80px}.dx,.av,.qa,.fr-grid{grid-template-columns:1fr}.vg{grid-template-columns:repeat(2,1fr)}.vg button.wide{grid-column:span 2;aspect-ratio:16/9}.tg{grid-template-columns:1fr}.take{grid-template-columns:1fr}}
+@media(max-width:640px){.sec{padding-top:72px}.hero .wrap{padding-block:70px 50px}.hero-tiles{grid-template-columns:repeat(2,1fr)}.pa{grid-template-columns:1fr}.pa button{min-height:0}
+.dx-list{grid-template-columns:1fr}.dx-room{padding:20px;min-height:0}.ptabs{grid-template-columns:repeat(4,1fr)}.lines div{grid-template-columns:96px 1fr}
+.stepper button span.t{font-size:11px}.stepper .dotn{width:44px;height:44px;font-size:16px}.stepper::before,.stepper .fill{top:21px}.step-panel{flex-direction:column;align-items:flex-start}
+
+.builder{grid-template-columns:1fr 1fr}.rules{grid-template-columns:1fr}.cert{padding:18px}.blk{padding:18px}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.strip{position:absolute;left:0;right:0;bottom:0;height:22px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 14px,transparent 14px 28px);animation:roll 3s linear infinite;opacity:.6}
+@keyframes roll{to{background-position:28px 0}}
+@keyframes bob{50%{transform:translateY(-14px)}}
+.pa{grid-template-columns:repeat(6,1fr)}.pa button{grid-column:span 2;min-height:250px;padding:26px}.pa button:nth-child(4),.pa button:nth-child(5){grid-column:span 3}
+.pa .ico{font-size:46px;line-height:1;transition:transform .4s}.pa button:hover .ico,.pa button[aria-expanded=true] .ico{transform:scale(1.2) rotate(-8deg)}
+.pa h3{font-size:clamp(22px,2.4vw,30px)}.pa .hc{display:flex;flex-wrap:wrap;gap:6px;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s,opacity .4s;margin-top:4px}
+.pa .hc span{padding:6px 11px;border-radius:999px;font-size:13px;font-weight:600;background:color-mix(in srgb,var(--c) 30%,transparent);border:1px solid var(--c)}
+.pa button:hover .hc,.pa button[aria-expanded=true] .hc{max-height:120px;opacity:1}.pa .tap{font:500 11px var(--mono);color:var(--muted)}
+.vg{grid-template-columns:repeat(6,1fr)}.vg button{grid-column:span 2}.vg button.wide{grid-column:span 3;aspect-ratio:16/9}
+@media(max-width:980px){.pa button,.pa button:nth-child(4),.pa button:nth-child(5){grid-column:span 3}.vg button{grid-column:span 3}.vg button.wide{grid-column:span 6}}
+@media(max-width:640px){.pa button,.pa button:nth-child(4),.pa button:nth-child(5){grid-column:1/-1;min-height:0}.pa .hc{max-height:120px;opacity:1}}
+.pg{all:unset;cursor:zoom-in;display:block;margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #c9bfa8;max-height:300px;position:relative}
+.pg img{width:100%;display:block;transition:transform .5s}.pg:hover img{transform:scale(1.03)}.pg:focus-visible{outline:2px solid var(--orange)}
+.pg .zm{position:absolute;right:10px;bottom:10px;background:#1b2333;color:#f6f1e6;font:600 11px var(--mono);padding:6px 10px;border-radius:8px}
+.pnav{display:flex;justify-content:space-between;margin-top:12px}.pnav button{background:#1b2333;color:#f6f1e6;border:0;border-radius:8px;padding:8px 12px;font-weight:700}
+.modal img{max-width:min(100%,900px);max-height:86vh;border-radius:8px;background:#fff;overflow:auto}
+
+/* rights strip (rs-) */
+.rs-vp{position:relative;overflow:hidden;padding:26px 0;margin-inline:-28px;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.rs-vp::before,.rs-vp::after{content:"";position:absolute;left:0;right:0;height:16px;background:repeating-linear-gradient(90deg,transparent 0 14px,rgba(255,255,255,.14) 14px 26px,transparent 26px 40px);z-index:2}
+.rs-vp::before{top:2px}.rs-vp::after{bottom:2px}
+.rs-st{display:flex;gap:24px;width:max-content;animation:rs-sl 60s linear infinite;padding:0 12px}
+.rs-vp:hover .rs-st,.rs-vp:focus-within .rs-st{animation-play-state:paused}
+@keyframes rs-sl{to{transform:translateX(-50%)}}
+.rs-fr{--a:var(--blue);--b:var(--plum);flex:0 0 250px;height:300px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.01)),var(--panel);color:var(--fg);cursor:pointer;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:24px 18px;font:inherit;transition:transform .35s,box-shadow .35s,border-color .35s;overflow:hidden}
+.rs-fr::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--a),var(--b))}
+.rs-fr::after{content:"";position:absolute;width:220px;height:220px;top:-40px;left:15px;background:radial-gradient(circle,color-mix(in srgb,var(--a) 30%,transparent),transparent 65%);pointer-events:none}
+.rs-fr:hover,.rs-fr:focus-visible,.rs-fr.rs-on{transform:translateY(-10px) scale(1.03);border-color:var(--a);box-shadow:0 20px 50px -10px color-mix(in srgb,var(--a) 60%,transparent);outline:none}
+.rs-n{position:absolute;top:16px;left:18px;font:500 11px var(--mono);letter-spacing:.14em;color:var(--muted)}
+.rs-ic{width:96px;height:96px;border-radius:28px;display:grid;place-items:center;background:linear-gradient(140deg,var(--a),var(--b));box-shadow:0 0 34px color-mix(in srgb,var(--a) 60%,transparent),inset 0 0 0 1px rgba(255,255,255,.3);position:relative;z-index:1}
+.rs-ic svg{width:56px;height:56px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.rs-fr h4{margin:0;font:800 26px/1.1 var(--display);letter-spacing:-.015em;position:relative;z-index:1;text-align:center}
+.rs-cap{max-width:760px;margin:20px auto 28px;padding:16px 24px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:17px;min-height:60px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;text-align:center}
+.rs-cap b{color:var(--yellow);font:800 20px var(--display)}.rs-cap .mono{color:var(--muted);font-size:11px;letter-spacing:.14em}
+@media (prefers-reduced-motion:reduce){.rs-st{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.rs-st .rs-dup{display:none}.rs-vp{-webkit-mask:none;mask:none;margin-inline:0}.rs-fr{transition:none}}
+@media (max-width:600px){.rs-fr{flex-basis:200px;height:250px}.rs-ic{width:76px;height:76px}.rs-ic svg{width:44px;height:44px}.rs-fr h4{font-size:21px}.rs-vp{margin-inline:-18px}}
+/* passport hero (pp-) */
+.pp-wrap{max-width:1240px;margin:0 auto;padding:0 28px;width:100%}.pp-hero .hero-tiles{position:relative;margin:0 auto 46px}
+@media(max-width:600px){.pp-wrap{padding:0 18px}}
+.pp-hero{position:relative;overflow:hidden;min-height:calc(100vh - 55px);display:flex;flex-direction:column}
+.pp-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.pp-glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45}
+.pp-g1{width:560px;height:560px;background:var(--orange);left:-180px;top:-160px;opacity:.28}
+.pp-g2{width:620px;height:620px;background:var(--plum);right:-160px;bottom:-200px;opacity:.4}
+.pp-g3{width:420px;height:420px;background:var(--teal);right:22%;top:-200px;opacity:.18}
+.pp-beam{position:absolute;top:-20%;width:180px;height:140%;background:linear-gradient(180deg,rgba(247,181,0,.16),transparent 70%);filter:blur(18px);transform-origin:top;}
+.pp-b1{left:52%;transform:rotate(22deg);animation:pp-sway 9s ease-in-out infinite}
+.pp-b2{left:72%;transform:rotate(-14deg);animation:pp-sway 11s ease-in-out infinite reverse;background:linear-gradient(180deg,rgba(226,31,79,.14),transparent 70%)}
+@keyframes pp-sway{50%{transform:rotate(6deg)}}
+.pp-reel{position:absolute;border-radius:50%;border:2px dashed rgba(255,255,255,.07);animation:pp-spin 40s linear infinite}
+.pp-reel::before{content:"";position:absolute;inset:18%;border-radius:50%;border:10px dotted rgba(247,181,0,.10)}
+.pp-r1{width:520px;height:520px;left:-200px;bottom:-240px}.pp-r2{width:340px;height:340px;right:-120px;top:60px;animation-duration:30s;animation-direction:reverse}
+@keyframes pp-spin{to{transform:rotate(360deg)}}
+.pp-grain{position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+#pp-pts{position:absolute;inset:0;width:100%;height:100%}
+.pp-inner{position:relative;flex:1;display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center;padding-block:48px 28px}
+.pp-kick{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);display:inline-flex;gap:10px;align-items:center}
+.pp-kick::before{content:"";width:28px;height:2px;background:var(--speed)}
+.pp-hero h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,5.4vw,76px);line-height:.98;letter-spacing:-.03em;margin:18px 0 16px}
+.pp-grad{background:var(--speed);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:pp-sh 6s linear infinite}
+@keyframes pp-sh{to{background-position:200% 0}}
+.pp-tag{font-family:var(--display);font-size:clamp(19px,1.8vw,24px);font-weight:500;color:#dfe6f2;margin:0 0 8px}
+.pp-sub{color:var(--muted);font-size:16px;max-width:460px;line-height:1.55;margin:0 0 26px}
+.pp-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.pp-chip{font-weight:600;font-size:13.5px;padding:9px 15px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);animation:pp-fl 5s ease-in-out infinite}
+.pp-chip i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;box-shadow:0 0 10px currentColor}
+.pp-chip:nth-child(2){animation-delay:-1.6s}.pp-chip:nth-child(3){animation-delay:-3.2s}
+@keyframes pp-fl{50%{transform:translateY(-6px)}}
+.pp-btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;padding:14px 26px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid transparent;background-image:linear-gradient(var(--ink),var(--ink)),var(--speed);background-origin:border-box;background-clip:padding-box,border-box;box-shadow:0 0 30px rgba(242,106,27,.25)}
+.pp-btn:hover{box-shadow:0 0 44px rgba(242,106,27,.45)}
+/* stage */
+.pp-stage{position:relative;min-width:0;height:560px;perspective:1400px;display:flex;align-items:center;justify-content:center}
+.pp-route{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.pp-book{position:absolute;left:50%;top:50%;margin:-190px 0 0 -280px;width:560px;height:380px;transform-style:preserve-3d;transform:rotateX(14deg) rotateY(-16deg) rotateZ(3deg);transition:transform .25s ease-out}
+.pp-page{position:absolute;top:0;width:50%;height:100%;background:radial-gradient(120% 90% at 50% 0%,#16294a,#0b1630 70%);border:1px solid rgba(232,194,106,.35);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.6),inset 0 0 60px rgba(0,0,0,.5)}
+.pp-pl{left:0;border-radius:14px 2px 2px 14px;transform-origin:right;transform:rotateY(8deg)}
+.pp-pr{right:0;border-radius:2px 14px 14px 2px;transform-origin:left;transform:rotateY(-8deg)}
+.pp-book::before{content:"";position:absolute;inset:-14px;border-radius:22px;background:var(--speed);filter:blur(26px);opacity:.38;transform:translateZ(-40px)}
+.pp-guil{position:absolute;inset:0;opacity:.5;background:repeating-radial-gradient(circle at 30% 120%,transparent 0 9px,rgba(232,194,106,.09) 9px 10px),repeating-radial-gradient(circle at 80% -20%,transparent 0 13px,rgba(27,163,156,.08) 13px 14px)}
+.pp-pp-holo{position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 40%,rgba(247,181,0,.18) 47%,rgba(226,31,79,.16) 52%,rgba(27,163,156,.16) 57%,transparent 64%);animation:pp-holo 5s ease-in-out infinite;mix-blend-mode:screen}
+@keyframes pp-holo{0%{transform:translateX(-30%)}100%{transform:translateX(30%)}}
+.pp-foil{position:absolute;left:18px;right:18px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.6}
+.pp-ph{position:absolute;left:20px;top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--gold);opacity:.85}
+.pp-pn{position:absolute;right:18px;bottom:14px;font-family:var(--mono);font-size:9px;color:rgba(232,194,106,.6);letter-spacing:.2em}
+.pp-crest{position:absolute;left:50%;top:50%;width:110px;height:110px;opacity:.35;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(232,194,106,.4);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.2em;color:var(--gold);box-shadow:0 0 40px rgba(232,194,106,.15) inset}
+.pp-crest b{display:block;font-size:24px;letter-spacing:.04em;margin-top:6px;background:linear-gradient(90deg,#f8e3a8,var(--gold),#fff3cf,var(--gold));background-size:200%;-webkit-background-clip:text;color:transparent;animation:pp-sh 4s linear infinite}
+.pp-mrz{position:absolute;left:20px;right:20px;bottom:30px;font-family:var(--mono);font-size:9.5px;color:rgba(232,194,106,.45);letter-spacing:.08em;line-height:1.5;white-space:nowrap;overflow:hidden}
+.pp-spine{position:absolute;left:50%;top:0;width:2px;height:100%;background:linear-gradient(transparent,rgba(232,194,106,.6),transparent);transform:translateX(-1px)}
+.pp-stamp{position:absolute;font-family:var(--display);font-weight:800;text-transform:uppercase;text-align:center;line-height:1.05;letter-spacing:.06em;font-size:11px;padding:8px 10px;border:2px solid currentColor;border-radius:8px;opacity:0;transform:scale(2.4) rotate(var(--r));text-shadow:0 0 10px currentColor;box-shadow:0 0 16px -4px currentColor,inset 0 0 12px -6px currentColor}
+.pp-stamp small{display:block;font-family:var(--mono);font-weight:500;font-size:8px;letter-spacing:.18em;opacity:.8;margin-top:3px}
+.pp-stamp.pp-round{border-radius:50%;width:84px;height:84px;display:grid;place-content:center;border-style:double;border-width:4px}
+.pp-stamp.pp-on{animation:pp-thump .5s cubic-bezier(.2,1.4,.4,1) forwards}
+@keyframes pp-thump{0%{opacity:0;transform:scale(2.4) rotate(var(--r))}60%{opacity:1;transform:scale(.94) rotate(var(--r))}100%{opacity:.92;transform:scale(1) rotate(var(--r))}}
+.pp-pp-ring{position:absolute;border-radius:50%;border:2px solid currentColor;pointer-events:none;animation:pp-ring .7s ease-out forwards}
+@keyframes pp-ring{from{width:10px;height:10px;opacity:.9}to{width:180px;height:180px;opacity:0;margin:-85px}}
+.pp-flash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--x) var(--y),rgba(255,240,210,.35),transparent 40%);animation:pp-fade .45s forwards}
+@keyframes pp-fade{to{opacity:0}}
+.pp-o{color:#ff7a3d}.pp-p{color:#ff4f86}.pp-t{color:#3fd6c9}.pp-y{color:#ffc93d}
+.pp-av{position:absolute;left:350px;top:142px;width:110px;height:110px;opacity:0;transform:translateZ(40px) scale(2.6) rotate(-10deg);filter:drop-shadow(0 0 14px rgba(232,194,106,.55))}
+.pp-av svg{width:100%;height:100%;overflow:visible}
+.pp-av.pp-on{animation:pp-avt .6s cubic-bezier(.2,1.4,.4,1) forwards}
+@keyframes pp-avt{0%{opacity:0;transform:translateZ(40px) scale(2.6) rotate(-10deg)}60%{opacity:1;transform:translateZ(40px) scale(.94) rotate(-10deg)}100%{opacity:1;transform:translateZ(40px) scale(1) rotate(-10deg)}}
+.pp-av .pp-shim{animation:pp-avs 3s linear infinite}
+@keyframes pp-avs{0%{transform:translateX(-140px)}100%{transform:translateX(140px)}}
+.pp-cap{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted);white-space:nowrap}
+@media (max-width:900px){.pp-inner{grid-template-columns:minmax(0,1fr);padding-top:30px;gap:10px}.pp-stage{height:400px;order:2}.pp-book{transform:scale(.62) rotateX(12deg) rotateY(-12deg)}}
+@media (max-width:480px){.pp-stamp:nth-child(2),.pp-stamp:nth-child(4),.pp-stamp:nth-child(7),.pp-stamp:nth-child(8){display:none}.pp-stage{height:320px;margin-inline:-18px}.pp-book{transform:scale(.56) rotateX(10deg) rotateY(-10deg)}.pp-cap{display:none}.pp-g1,.pp-g2{width:340px;height:340px}}
+@media (prefers-reduced-motion:reduce){.pp-hero *,.pp-hero *::before,.pp-hero *::after{animation:none!important;transition:none!important}.pp-stamp,.pp-av{opacity:.92!important;transform:rotate(var(--r,0))!important}.pp-av{transform:translateZ(40px) rotate(-10deg)!important;opacity:1!important}}
+.pp-hero .hero-tiles{position:relative;margin:0 auto 26px;max-width:none}
+.pp-hero{min-height:auto}
+.pp-inner{min-height:calc(100vh - 160px)}
+</style></head><body>
+<header class="nav"><div class="wrap"><a href="#top"><img src="assets/img/logo.png" alt="Media Shippers"></a>
+<button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav aria-label="Main"><ul id="menu"><li><a href="#practice">Practice</a></li><li><a href="#documents">Documents</a></li><li><a href="#avails">Avails Certificate</a></li><li><a href="#services">Document Q&amp;A</a></li><li><a href="#reach">New markets</a></li><li><a href="#film-rights">Your film, your rights</a></li><li><a href="#videos">Videos</a></li><li><a href="#articles">Articles</a></li><li><a href="#team">Team</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></nav></div></header>
+<main id="top">
+<section class="pp-hero" id="pp-hero"><div class="strip" aria-hidden="true"></div>
+<div class="pp-bg"><div class="pp-glow pp-g1"></div><div class="pp-glow pp-g2"></div><div class="pp-glow pp-g3"></div><div class="pp-beam pp-b1"></div><div class="pp-beam pp-b2"></div><div class="pp-reel pp-r1"></div><div class="pp-reel pp-r2"></div><canvas id="pp-pts"></canvas><div class="pp-grain"></div></div>
+<div class="pp-wrap pp-inner">
+<div>
+<div class="pp-kick">Media Shippers · Legal Services</div>
+<h1>Your film's <span class="pp-grad">passport</span> to the world.</h1>
+<p class="pp-tag">One film. Every territory.</p>
+<p class="pp-sub">Chain of title, licensing, dubbing and distribution paperwork, and the Avails Certificate, for content moving across markets.</p>
+<div class="pp-chips"><span class="pp-chip"><i class="pp-y" style="background:currentColor"></i>IPR</span><span class="pp-chip"><i class="pp-t" style="background:currentColor"></i>Technology and AI law</span><span class="pp-chip"><i class="pp-p" style="background:currentColor"></i>Media and entertainment law</span></div>
+<a class="pp-btn" href="#contact">Contact →</a>
+</div>
+<div class="pp-stage" id="pp-stage">
+<svg class="pp-route" viewBox="0 0 600 560" preserveAspectRatio="none" aria-hidden="true">
+<defs><linearGradient id="pp-rg" x1="0" x2="1"><stop offset="0" stop-color="#F7B500"/><stop offset=".5" stop-color="#F26A1B"/><stop offset="1" stop-color="#E21F4F"/></linearGradient><filter id="pp-gl"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<path id="pp-arc" d="M40 470 Q 300 -60 570 120" fill="none" stroke="url(#pp-rg)" stroke-width="2" stroke-dasharray="6 8" opacity=".75"><animate attributeName="stroke-dashoffset" from="140" to="0" dur="4s" repeatCount="indefinite"/></path>
+<path d="M40 470 Q 300 -60 570 120" fill="none" stroke="url(#pp-rg)" stroke-width="6" opacity=".25" filter="url(#pp-gl)"/>
+<circle r="5" fill="#fff"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#pp-arc"/></animateMotion></circle>
+<g fill="#F7B500"><circle cx="40" cy="470" r="5"><animate attributeName="r" values="5;11;5" dur="2s" repeatCount="indefinite"/></circle><circle cx="570" cy="120" r="5" fill="#E21F4F"><animate attributeName="r" values="5;11;5" dur="2s" begin="1s" repeatCount="indefinite"/></circle></g>
+<text x="52" y="500" fill="#94a4be" font-family="IBM Plex Mono" font-size="11" letter-spacing="2">INDIA</text><text x="500" y="100" fill="#94a4be" font-family="IBM Plex Mono" font-size="11" letter-spacing="2">GLOBAL</text>
+</svg>
+<div class="pp-book" id="pp-book">
+<div class="pp-page pp-pl"><div class="pp-guil"></div><div class="pp-holo"></div><div class="pp-ph">CONTENT PASSPORT · RIGHTS</div><div class="pp-foil" style="top:40px"></div><div class="pp-foil" style="bottom:62px"></div><div class="pp-mrz">P&lt;MSL&lt;CHAIN&lt;OF&lt;TITLE&lt;&lt;RIGHTS&lt;CLEARED&lt;&lt;&lt;<br>A&lt;H&lt;&lt;TERRITORY&lt;LANGUAGE&lt;MEDIUM&lt;TERM&lt;&lt;</div><div class="pp-pn">01</div></div>
+<div class="pp-page pp-pr"><div class="pp-guil"></div><div class="pp-holo" style="animation-delay:-2.5s"></div><div class="pp-ph">VISAS · TERRITORIES</div><div class="pp-foil" style="top:40px"></div><div class="pp-pn">02</div></div>
+<div class="pp-spine"></div>
+<div id="pp-stamps" style="position:absolute;inset:0;transform:translateZ(80px);transform-style:preserve-3d"></div>
+<div class="pp-av" id="pp-fin" role="img" aria-label="Avails Certificate stamp, Parts A to H, admitted"><svg viewBox="0 0 124 124"><defs><linearGradient id="pp-gf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b8862e"/><stop offset=".35" stop-color="#f8e3a8"/><stop offset=".5" stop-color="#fff6d8"/><stop offset=".7" stop-color="#e8c26a"/><stop offset="1" stop-color="#9c6f22"/></linearGradient><linearGradient id="pp-gs" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><path id="pp-avp" d="M62 62 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/><clipPath id="pp-avc"><circle cx="62" cy="62" r="60"/></clipPath></defs>
+<circle cx="62" cy="62" r="59" fill="rgba(10,18,36,.55)" stroke="url(#pp-gf)" stroke-width="3"/><circle cx="62" cy="62" r="54" fill="none" stroke="url(#pp-gf)" stroke-width="1.2"/><circle cx="62" cy="62" r="34" fill="none" stroke="url(#pp-gf)" stroke-width="1.5"/>
+<text font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="11" letter-spacing="2.2" fill="url(#pp-gf)"><textPath href="#pp-avp" startOffset="2%">AVAILS CERTIFICATE ★ ADMITTED ★</textPath></text>
+<text x="62" y="60" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="900" font-size="20" fill="url(#pp-gf)">1st</text><text x="62" y="75" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" letter-spacing="1.5" fill="#e8c26a">EVER</text>
+<g clip-path="url(#pp-avc)"><g transform="rotate(20 62 62)"><rect x="-60" y="-30" width="34" height="190" fill="url(#pp-gs)" opacity=".6"><animateTransform attributeName="transform" type="translate" from="0 0" to="220 0" dur="3s" repeatCount="indefinite"/></rect></g></g></svg></div>
+</div>
+<div class="pp-cap">INDIA → EVERY TERRITORY · RIGHTS STAMPED</div>
+</div>
+</div>
+<div class="wrap"><div class="hero-tiles"><a href="#practice"><b class="grad" data-n="3">3</b><span class="mono">Practice areas</span></a><a href="#documents"><b class="grad" id="h-docs">10</b><span class="mono">Document types</span></a><a href="#documents"><b class="grad" id="h-subs">0</b><span class="mono">Sub-agreements</span></a><a href="#avails"><b class="grad">1st ever</b><span class="mono">Avails Certificate</span></a></div></div>
+</section>
+<div class="ticker" aria-hidden="true"><div class="track"><div class="grp" id="tk"></div><div class="grp" id="tk2"></div></div></div>
+
+<section class="sec" id="practice"><div class="wrap">
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Practice areas</span><h2>Three practice areas</h2><p>Hover or tap a tile.</p></div>
+<div class="pa reveal" id="pa"></div></div></section>
+
+<section class="sec" id="documents"><div class="wrap">
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Document explorer</span><h2>Documents we prepare</h2><p>Pick a document, or search every sub-agreement.</p></div>
+<div class="dx-tools reveal"><input class="search" id="q" type="search" placeholder="Search sub-agreements, e.g. music, release, schedule" aria-label="Search sub-agreements"><span class="counter" aria-live="polite" id="cnt"></span></div>
+<div class="dx reveal"><div class="dx-list" id="dlist" role="tablist" aria-label="Documents"></div>
+<div class="card dx-room" id="droom" role="tabpanel"></div></div></div></section>
+
+<section class="sec" id="avails"><div class="wrap">
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Avails Certificate</span><h2>One document. <span class="grad">Ownership and right to sell.</span></h2></div>
+<div class="av reveal">
+<div class="cert" aria-label="Illustrative certificate layout"><span class="illu">SAMPLE</span>
+<header><b>Avails Certificate</b><span class="mono">Blank template</span></header>
+<div class="ptabs" role="tablist" id="ptabs" aria-label="Certificate parts"></div>
+<div class="ppanel" id="ppanel" role="tabpanel"></div>
+<div class="sig"><span>Seller</span><span>Practising advocate</span></div></div>
+<div class="who"><div class="row" role="group" aria-label="View for" id="whob"></div><div class="card who-panel" id="whop" aria-live="polite"></div></div>
+</div></div></section>
+
+<section class="sec" id="services"><div class="wrap">
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Service · Prototype</span><h2>Document Q&amp;A</h2><p>An assistant over our document templates.</p></div>
+<div class="tabs reveal" role="tablist" id="qtabs" aria-label="Document Q&A features"></div>
+<div class="qa reveal"><div class="qa-copy" id="qcopy"></div><div class="card qa-screen" id="qscreen" aria-hidden="true"></div></div>
+<p class="proto" style="margin-top:20px">Prototype. Output should be reviewed by a person.</p>
+</div></section>
+
+<section class="sec" id="reach"><div class="wrap">
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Reach new markets</span><h2>Content not working in your region?</h2></div>
+<div class="stepper reveal" role="tablist" id="stepper" aria-label="Steps"><i class="fill" id="sfill"></i></div>
+<div class="card step-panel reveal" id="spanel" aria-live="polite"></div></div></section>
+
+<section class="sec" id="film-rights"><div class="wrap">
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">From a talk · General information</span><h2>Your film, <span class="grad">your rights</span></h2><p>You made the film. Under Indian copyright law, the producer owns the film as a whole, but the script, music, lyrics, songs and performances each belong to their creators unless signed over in writing.</p></div>
+<div class="fr-grid">
+<div class="card blk reveal" style="--c:var(--teal)"><span class="eyebrow">Chain of title · your film's passport</span><h3>Do you have these?</h3>
+<div class="prog-l"><span id="pl">0 of 8</span><b id="pmsg">Tick what you have</b></div><div class="prog"><i id="pbar"></i></div>
+<ul class="check" id="chk"></ul></div>
+</div>
+<div class="card blk reveal" style="--c:var(--plum);margin-top:20px"><span class="eyebrow">Slice your film</span><h3>One film, many rights</h3>
+<p class="mono" style="color:var(--muted);margin:6px 0 0">Every frame is a separate right you can license. Hover to pause, click to learn.</p>
+<div class="rs-vp"><div class="rs-st" id="rs-st" role="list"></div></div><div class="rs-cap" id="rs-out" aria-live="polite"></div>
+<span class="eyebrow" style="margin-top:10px">Build a deal: change one and it's a new deal</span>
+<div class="builder" id="builder"></div><div class="deal" id="deal" aria-live="polite"></div>
+<div class="card remake"><span class="mono">Remake rights</span><b>Sairat (2016)</b><span class="arr">→</span><b>Dhadak (2018)</b></div></div>
+<div class="card blk reveal" style="--c:var(--blue);margin-top:20px"><span class="eyebrow">AI training rights</span><h3>A separate right. Four rules.</h3>
+<ol class="rules"><li><b>Check chain of title</b><span>Actor, music and script agreements must cover it, or get fresh written consent.</span></li><li><b>License, don't assign</b><span>Keep it non-exclusive.</span></li><li><b>Training only</b><span>No copying faces, voices, characters or story.</span></li><li><b>Define the fee</b><span>Per hour of footage, flat fee, or both.</span></li></ol></div>
+<div class="take reveal"><button class="flip" aria-pressed="false"><div class="in"><div class="f"><b>1</b><h3>Get it in writing</h3></div><div class="b">Especially music. An assignment must be in writing and signed.</div></div></button>
+<button class="flip" aria-pressed="false"><div class="in"><div class="f"><b>2</b><h3>Slice your rights</h3></div><div class="b">Including AI training. Don't sell the whole film in one deal.</div></div></button>
+<button class="flip" aria-pressed="false"><div class="in"><div class="f"><b>3</b><h3>License where you can</h3></div><div class="b">Write the territory, language, medium and term.</div></div></button></div>
+</div></section>
+
+<section class="sec" id="videos"><div class="wrap">
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Videos</span><h2>Watch</h2></div>
+<div class="vg reveal" id="vg"></div></div></section>
+
+<section class="sec" id="articles"><div class="wrap">
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Writing</span><h2>LinkedIn articles</h2></div>
+<div class="row reveal" id="afil" role="group" aria-label="Filter articles by topic"></div>
+<div class="ag" id="ag"></div>
+<a class="btn more" href="https://www.linkedin.com/in/mrunmai-pimparkar-aa015a219/recent-activity/articles/" target="_blank" rel="noopener">View all on LinkedIn ↗</a>
+</div></section>
+
+<section class="sec" id="team"><div class="wrap">
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Team</span><h2>Team</h2></div>
+<div class="tg reveal">
+<div class="card person"><div class="av-i">UG</div><h3>Uday Ghare</h3><div class="role">CEO</div><div class="links"><a href="mailto:uday.ghare@entertainmenttechnologists.com">Email</a><a href="https://www.linkedin.com/in/uday-ghare-6b72332/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+<div class="card person"><div class="av-i">MP</div><h3>Mrunmai Pimparkar</h3><div class="role">Legal Counsel</div><div class="links"><a href="mailto:mrunmai.pimparkar@entertainmenttechnologists.com">Email</a><a href="https://www.linkedin.com/in/mrunmai-pimparkar-aa015a219/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+</div></div></section>
+
+<section class="sec faq" id="faq"><div class="wrap">
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">FAQ</span><h2>FAQ</h2></div>
+<div class="reveal"><details><summary>What areas of law does this cover?</summary><div class="blank"></div></details>
+<details><summary>How does an engagement begin?</summary><div class="blank"></div></details>
+<details><summary>How are fees determined?</summary><div class="blank"></div></details>
+<details><summary>What are typical timelines?</summary><div class="blank"></div></details></div>
+</div></section>
+
+<section class="sec" id="contact"><div class="wrap">
+<div class="card contact-c reveal"><div><span class="eyebrow">Contact</span><h3>Contact</h3></div>
+<div class="row"><a class="btn" href="mailto:mrunmai.pimparkar@entertainmenttechnologists.com">mrunmai.pimparkar@entertainmenttechnologists.com</a><a class="btn" href="https://www.linkedin.com/in/mrunmai-pimparkar-aa015a219/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+</div></section>
+</main>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mt"><span class="mt" id="mt"></span><button class="x" id="mx" aria-label="Close">✕</button><video id="mv" controls playsinline></video><img id="mi" alt="" hidden></div>
+<footer><div class="wrap"><img src="assets/img/logo.png" alt="Media Shippers">
+<p class="disc">This website is for general information only and is not legal advice or solicitation. No lawyer-client relationship is created until an engagement is agreed in writing.</p>
+<span>© Media Shippers Legal Services</span></div></footer>
+<script>
+const $=id=>document.getElementById(id),esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const modal=$('modal'),mv=$('mv');let lastF;
+const DOCS=[{"t": "AI Content Licensing Agreement", "s": ["Schedule A: Deal details", "Schedule B: Licensed content and delivery logistics"]}, {"t": "Cast & Crew Confirmation Documents", "s": ["Contributor Deal Memo and Rights Certificate", "Personal Release / Appearance Release", "Credits Block Cross-Reference Checklist", "Call Sheet / Daily Production Report (DPR)", "Union / Guild Compliance Confirmation Sheet", "Payment & Tax Compliance Summary", "Payroll / Statutory Tax Proof Declaration", "Government Production Incentive Certification Declaration"]}, {"t": "Content Distribution Documents", "s": ["Content Distribution and Licensing Agreement (Schedules A to E)", "Content Sales Agency Agreement (Schedules A to E)", "Acquisition / Incoming Licence Agreement", "Rights Schedule", "Prior Distribution / Licensing Agreements Index", "Right to Sell / Sublicense Confirmation Letter", "Export / Import Clearance Checklist"]}, {"t": "Copyright Assignment & Transfer Agreement", "s": ["Schedule A: Work and production details", "Schedule B: Territory, term and rights scope", "Schedule C: Payment and royalty details", "Schedule D: Chain of title, disclosures and third-party materials"]}, {"t": "Chain-of-Title & Rights Clearance Documents", "s": ["Contributor Deal Memo and Rights Certificate", "Personal Release / Appearance Release", "Certificate of Authorship and Ownership", "Master Chain-of-Title Index", "Music Rights Certificate / Music Clearance Certificate", "Content Distribution and Licensing Agreement (Schedules A to E)", "Sublicensing", "Rights Schedule", "Licensor / Rights Holder Confirmation Letter"]}, {"t": "Licensor Confirmation Documents", "s": ["Licensor / Rights Holder Confirmation Letter", "Board Resolution / Corporate Authorization", "Power of Attorney / Authority Letter", "No Objection Certificate: Original / Underlying Rights Holder", "Rights Availability Certificate", "Existing License Termination / Expiry Confirmation", "Underlying Rights Confirmation Summary", "Errors & Omissions Insurance Confirmation Sheet", "Government / Censorship / Classification Compliance Summary"]}, {"t": "Music Clearance Documents", "s": ["Music Composer Agreement / Score Assignment", "Lyricist Agreement / Lyrics Assignment", "Singer / Performer Release", "Musician / Session Artist Release", "Publishing / Composition License", "Synchronization License", "Master Recording License", "Music Rights Certificate / Music Clearance Certificate", "Soundtrack / OST Exploitation Agreement", "PRO / Collecting Society Information Sheet", "No Objection Certificate: Use of Music", "Invoice / Payment Proof / Royalty Statement", "AI-Generated Music Disclosure / License", "Traditional / Folk / Public Domain Verification Note", "Remix / Cover Version License", "Music Cue Sheet", "Sample Clearance Agreement"]}, {"t": "Production Ownership Documents", "s": ["Certificate of Authorship and Ownership", "Master Chain-of-Title Index", "Co-Production / Joint Ownership Agreement", "Writer Agreement / Script Assignment / Screenplay Assignment", "Underlying Rights Agreement", "Director Agreement with Assignment Clause", "Detailed Parties and Capacity Declaration", "Third-Party Material License / Visual Content Clearance Agreement", "Production Legal Opinion Letter / Title Report", "Film Financing Agreement", "AI-Generated Visual / Video Content Disclosure and Clearance Agreement", "Crowdfunding Backer Agreement and IP Ring-Fence", "Common schedules and checklists (Schedules A to F)"]}, {"t": "Rights Schedule", "s": ["Single document: companion to the Content Distribution / Licensing Agreement"]}, {"t": "Sublicensing Clause", "s": ["Single document: standalone sublicensing clause"]}],ARTS=[{"t": "A Three-Second Sample Can Cost You Years in Court", "s": "Sampling and licensing", "u": "https://www.linkedin.com/pulse/three-second-sample-can-cost-you-years-court-mrunmai-pimparkar-53hyf/", "c": "Music and sampling"}, {"t": "Common Chords, Uncommon Lawsuits", "s": "Music copyright", "u": "https://www.linkedin.com/pulse/common-chords-uncommon-lawsuits-mrunmai-pimparkar-uckff/", "c": "Music and sampling"}, {"t": "Two Seconds of Sound: The Copyright Battle Remix Culture Never Escaped", "s": "Remix and sampling", "u": "https://www.linkedin.com/pulse/two-seconds-sound-copyright-battle-remix-culture-never-pimparkar-8szrc/", "c": "Music and sampling"}, {"t": "AI Learned From Everything. Copyright Is Finally Asking: Was It Allowed?", "s": "AI training and copyright", "u": "https://www.linkedin.com/pulse/ai-learned-from-everything-copyright-finally-asking-mrunmai-pimparkar-x80ge/", "c": "AI and copyright"}, {"t": "Remix Culture v. Copyright: Where Is the Line?", "s": "Transformative use", "u": "https://www.linkedin.com/pulse/can-remix-culture-survive-copyright-law-mrunmai-pimparkar-dadwf/", "c": "Music and sampling"}, {"t": "When AI Makes the Movie, Who Gets the Rights?", "s": "Ownership of AI-generated film content", "u": "https://www.linkedin.com/pulse/when-ai-makes-movie-who-gets-rights-mrunmai-pimparkar-iheac/", "c": "AI and copyright"}, {"t": "The AI Copyright Reckoning in Cinema: When Machines Learn Without Permission", "s": "AI training and cinema", "u": "https://www.linkedin.com/pulse/ai-copyright-reckoning-cinema-when-machines-learn-mrunmai-pimparkar-3zbhf/", "c": "AI and copyright"}, {"t": "What If the Biggest Risk to Your Film or Music Isn't Piracy... but Misrepresentation?", "s": "Edited or dubbed licensed content", "u": "https://www.linkedin.com/pulse/what-biggest-risk-your-film-music-isnt-piracy-mrunmai-pimparkar-mxcyf/", "c": "Film rights and licensing"}, {"t": "No AD, No CC = No Certificate: India's Bold Push for Inclusive Cinema", "s": "Audio description and captions in certification", "u": "https://www.linkedin.com/pulse/ad-cc-certificate-indias-bold-push-inclusive-cinema-mrunmai-pimparkar-3ctwf/", "c": "Cinema and certification"}, {"t": "Watching the 2026 Oscars Through a Media & Entertainment Law Lens", "s": "Media and entertainment law", "u": "https://www.linkedin.com/pulse/watching-2026-oscars-through-media-entertainment-law-lens-pimparkar-x8ntf/", "c": "Film rights and licensing"}];
+// nav
+const links=[...document.querySelectorAll('.nav ul a')];
+const navIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>navIO.observe(s));
+$('burger').onclick=()=>{const o=$('menu').classList.toggle('open');$('burger').setAttribute('aria-expanded',o)};
+links.forEach(a=>a.addEventListener('click',()=>{$('menu').classList.remove('open');$('burger').setAttribute('aria-expanded',false)}));
+// reveal
+const rIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rIO.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>rIO.observe(el));
+// practice
+const PA=[['IPR','Intellectual property','©',['Chain of title','Copyright assignment','Trademarks for titles','Licensing'],'orange'],['TECH / AI','Technology and AI law','⚙',['AI content licensing','Dubbing and AI voice rights','AI training rights'],'blue'],['MEDIA','Media and entertainment law','🎬',['Distribution','Licensing','Avails Certificate','Music clearance'],'red']];
+$('pa').innerHTML=PA.map((p,i)=>`<button style="--c:var(--${p[4]})" aria-expanded="false"><span class="ico" aria-hidden="true">${p[2]}</span><div><span class="mono">0${i+1} · ${p[0]}</span><h3>${p[1]}</h3><div class="hc">${p[3].map(c=>`<span>${c}</span>`).join('')}</div></div></button>`).join('');
+$('pa').addEventListener('click',e=>{const b=e.target.closest('button');if(b)b.setAttribute('aria-expanded',b.getAttribute('aria-expanded')!=='true')});
+const tk=['Chain of title','Avails Certificate','Licensing','Dubbing rights','Distribution','AI content licensing','Music clearance','IPR','Technology and AI law','Media and entertainment law'].map(x=>`<span class="dot"></span><b>${x}</b>`).join('');$('tk').innerHTML=tk;$('tk2').innerHTML=tk;
+// docs explorer
+const total=DOCS.reduce((a,d)=>a+d.s.length,0);$('h-subs').textContent=total;$('h-docs').textContent=DOCS.length;
+let cur=0;
+const cIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cIO.unobserve(e.target);const el=e.target,n=+el.textContent;if(reduce||!n)return;let k=0;const st=setInterval(()=>{k++;el.textContent=Math.round(n*k/30);if(k>=30)clearInterval(st)},30)}));
+['h-docs','h-subs'].forEach(id=>cIO.observe($(id)));
+function hl(s,q){if(!q)return esc(s);const i=s.toLowerCase().indexOf(q);return i<0?esc(s):esc(s.slice(0,i))+'<mark>'+esc(s.slice(i,i+q.length))+'</mark>'+esc(s.slice(i+q.length))}
+$('dlist').innerHTML=DOCS.map((d,i)=>`<button role="tab" id="dt${i}" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-i="${i}"><span>${esc(d.t)}</span><span class="n">${d.s.length}</span></button>`).join('');
+function renderDocs(){const q=$('q').value.trim().toLowerCase();const btns=[...$('dlist').children];let html,count;
+ if(q){const hits=[];DOCS.forEach((d,i)=>{const m=d.s.filter(s=>s.toLowerCase().includes(q));btns[i].classList.toggle('dim',!m.length);m.forEach(s=>hits.push([s,d.t]))});count=hits.length;
+  html=`<span class="mono">Search results</span><h3>“${esc(q)}”</h3><ul class="subchips">${hits.map(h=>`<li><small>${esc(h[1])}</small>${hl(h[0],q)}</li>`).join('')||'<li>No matching titles</li>'}</ul>`}
+ else{btns.forEach(b=>b.classList.remove('dim'));const d=DOCS[cur];count=d.s.length;html=`<span class="mono">Document ${String(cur+1).padStart(2,'0')} of ${DOCS.length}</span><h3>${esc(d.t)}</h3><ul class="subchips">${d.s.map((s,k)=>`<li style="animation-delay:${k*30}ms">${esc(s)}</li>`).join('')}</ul>`}
+ $('droom').setAttribute('aria-labelledby','dt'+cur);
+ $('droom').innerHTML=html+`<div class="conf">🔒 Titles only. Client documents are confidential.</div>`;
+ $('cnt').innerHTML=q?`<b>${count}</b> of ${total} sub-agreements`:`<b>${total}</b> sub-agreements across ${DOCS.length} documents`}
+function selDoc(i,focus){cur=i;[...$('dlist').children].forEach((b,k)=>{b.setAttribute('aria-selected',k===i);b.tabIndex=k===i?0:-1});if(focus)$('dlist').children[i].focus();$('q').value='';renderDocs()}
+$('dlist').addEventListener('click',e=>{const b=e.target.closest('button');if(b)selDoc(+b.dataset.i)});
+function arrows(el,fn,n,get){el.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key];if(!k)return;e.preventDefault();fn((get()+k+n)%n,true)})}
+arrows($('dlist'),selDoc,DOCS.length,()=>cur);$('q').addEventListener('input',renderDocs);renderDocs();
+// avails
+const PG=[1,1,2,2,2,2,3,3];const PARTS=[['Certificate details',['Certificate no.','Date of issue','Issued for']],['Rights holder details',['Name','Address','Authorised signatory']],['Content details',['Title','Format','Duration']],['Rights availability',['Territory','Exclusivity','Licence duration']],['Rights types available',['Rights type','Available','Notes']],['Language rights',['Dubbing','Subtitling','Languages']],['Encumbrances, existing licences and restrictions',['Existing licences','Restrictions','Encumbrances']],['Seller declaration',['Declaration','Seller','Date']]];
+let pc=0;$('ptabs').innerHTML=PARTS.map((p,i)=>`<button role="tab" id="pt${i}" aria-selected="${i===0}" tabindex="${i?-1:0}" aria-label="Part ${'ABCDEFGH'[i]}: ${p[0]}">${'ABCDEFGH'[i]}</button>`).join('');
+function selPart(i,f){pc=i;[...$('ptabs').children].forEach((b,k)=>{b.setAttribute('aria-selected',k===i);b.tabIndex=k===i?0:-1});if(f)$('ptabs').children[i].focus();const p=PARTS[i];
+ $('ppanel').setAttribute('aria-labelledby','pt'+i);$('ppanel').innerHTML=`<span class="mono">Part ${'ABCDEFGH'[i]}</span><h4>${p[0]}</h4><button class="pg" id="pgb" aria-label="Zoom page ${PG[i]} of the sample certificate"><img src="assets/img/avails-p-${PG[i]}.jpg" alt="Sample Avails Certificate, page ${PG[i]}" style="object-fit:cover;object-position:top"><span class="zm">Page ${PG[i]} of 4 · Zoom</span></button><div class="pnav"><button id="pprev" ${i?'':'disabled'}>← Part ${'ABCDEFGH'[i-1]||''}</button><button id="pnext" ${i<7?'':'disabled'}>Part ${'ABCDEFGH'[i+1]||''} →</button></div>`;
+ $('pprev').onclick=()=>i&&selPart(i-1);$('pnext').onclick=()=>i<7&&selPart(i+1);$('pgb').onclick=e=>openImg(e.currentTarget,`assets/img/avails-p-${PG[i]}.jpg`,'Avails Certificate · sample page '+PG[i])}
+$('ptabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)selPart([...$('ptabs').children].indexOf(b))});arrows($('ptabs'),selPart,8,()=>pc);selPart(0);
+const WHO=[['For buyers','👁','Verify ownership and authority to sell','Review one document to see who owns the film and who may sell it.'],['For sellers','↻','Reuse for every later licence','On Media Shippers and whenever the film is licensed again.'],['Accountability','✍','Signed by a practising advocate','Not self-certified by the seller.']];
+$('whob').innerHTML=WHO.map((w,i)=>`<button class="pill" aria-pressed="${i===0}" data-i="${i}">${w[0]}</button>`).join('');
+function who(i){[...$('whob').children].forEach((b,k)=>b.setAttribute('aria-pressed',k===i));const w=WHO[i];$('whop').style.setProperty('--c',['var(--orange)','var(--blue)','var(--red)'][i]);$('whop').innerHTML=`<span class="big">${w[1]}</span><h3>${w[2]}</h3><p>${w[3]}</p>`}
+$('whob').addEventListener('click',e=>{const b=e.target.closest('button');if(b)who(+b.dataset.i)});who(0);
+// Q&A
+const QA=[['Ask','Chat with citations','Ask a question, get the quoted passage with document name and page.',`<div class="bubble">Question about a template…</div><div class="bubble"><div class="ghost"></div><div class="ghost" style="width:70%;margin-top:6px"></div></div><div class="tagrow"><span>SOURCE · document · page</span></div>`],
+['Extract rights','Extract rights','Pulls territory, term, language, holdbacks and rights types.',`<div class="tagrow"><span>TERRITORY</span><span>TERM</span><span>LANGUAGE</span><span>HOLDBACKS</span><span>SVOD</span><span>AVOD</span><span>TVOD</span></div><div class="ghost"></div><div class="ghost" style="width:60%"></div>`],
+['Draft from template','Draft from template','Fill in deal terms to generate a first draft.',`<div class="bubble">Template ▾</div><div class="ghost"></div><div class="ghost" style="width:80%"></div><div class="tagrow"><span>BLANKS FILLED · OPEN</span></div>`],
+['Clause check','Clause check','Checks a document against a list of standard clauses.',`<div class="bubble"><span class="ok">● present</span> · clause · page</div><div class="bubble"><span class="no">● missing</span> · clause</div><div class="bubble"><span class="ok">● present</span> · clause · page</div>`]];
+let qi=0;$('qtabs').innerHTML=QA.map((q,i)=>`<button class="pill" role="tab" id="qt${i}" aria-selected="${i===0}" tabindex="${i?-1:0}">${q[0]}</button>`).join('');
+function selQ(i,f){qi=i;[...$('qtabs').children].forEach((b,k)=>{b.setAttribute('aria-selected',k===i);b.tabIndex=k===i?0:-1});if(f)$('qtabs').children[i].focus();
+ $('qcopy').innerHTML=`<span class="mono">0${i+1} / 04</span><h3>${QA[i][1]}</h3><p>${QA[i][2]}</p>`;$('qscreen').innerHTML=`<div class="bar"><i></i><i></i><i></i></div>`+QA[i][3]}
+$('qtabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)selQ([...$('qtabs').children].indexOf(b))});arrows($('qtabs'),selQ,4,()=>qi);selQ(0);
+// stepper
+const ST=[['Check your genre','See which kind of content your film is.'],['Find where it trends','Regions and languages where that genre finds an audience.'],['Dub it','Release it in the language of those markets.'],['Sell with different rights','By territory, language, medium and term.'],['Documentation handled by us','We prepare the legal documentation for each deal.']];
+let si=0;$('stepper').insertAdjacentHTML('beforeend',ST.map((s,i)=>`<button role="tab" aria-selected="${i===0}" tabindex="${i?-1:0}"><span class="dotn">${i+1}</span><span class="t">${s[0]}</span></button>`).join(''));
+const sb=[...$('stepper').querySelectorAll('button')];
+function selS(i,f){si=i;sb.forEach((b,k)=>{b.setAttribute('aria-selected',k===i);b.classList.toggle('done',k<i);b.tabIndex=k===i?0:-1});if(f)sb[i].focus();$('sfill').style.width=(80*i/4)+'%';
+ $('spanel').innerHTML=`<div><span class="mono">Step ${i+1} of 5</span><h3>${ST[i][0]}</h3><p>${ST[i][1]}</p></div>`+(i<4?`<button class="btn" id="snext">Next step →</button>`:`<a class="btn solid" href="#contact">Contact</a>`);
+ const n=$('snext');if(n)n.onclick=()=>selS(i+1)}
+$('stepper').addEventListener('click',e=>{const b=e.target.closest('button');if(b)selS(sb.indexOf(b))});arrows($('stepper'),selS,5,()=>si);selS(0);
+// checklist
+const CK=["Writer's agreement (script assignment)","Director's agreement","Music agreements with composer, lyricist and singers","Actor agreements, including dubbing and AI use","Crew and technician agreements","CBFC certificate","Title registration","Copyright registration"];
+$('chk').innerHTML=CK.map((c,i)=>`<li><label><input type="checkbox">${esc(c)}</label></li>`).join('');
+$('chk').addEventListener('change',()=>{const n=$('chk').querySelectorAll(':checked').length;$('pl').textContent=n+' of 8';$('pbar').style.width=n/8*100+'%';$('pmsg').textContent=n===8?'Ready to travel':n?'Gaps remain':'Tick what you have'});
+// rights strip
+const SL=[['Theatrical','Release in cinemas.'],['Satellite TV','Broadcast on television channels.'],['OTT','Subscription, ad-supported, pay-per-view.'],['Dubbing','The film in other languages.'],['Remake','A new version in another language, e.g. Sairat → Dhadak.'],['Music','Songs sold separately, e.g. to a label or YouTube.'],['Overseas','Rights outside India.'],['In-flight','Screening on airlines.'],['Clips and YouTube','Short excerpts online.'],['Subtitles','Subtitled versions for new audiences.'],['AI training','Licensing footage to train AI models. A separate right.']];
+const RP={
+film:'<rect x="4" y="14" width="40" height="28" rx="3"/><path d="M4 22h40M10 14l6-8M22 14l6-8M34 14l6-8M4 14l4-8h34l2 8"/>',
+sat:'<path d="M14 34a14 14 0 0 1 0-20l20 20a14 14 0 0 1-20 0z"/><path d="M24 24l8-8M30 10a8 8 0 0 1 8 8M30 4a14 14 0 0 1 14 14M12 42h16"/>',
+ott:'<rect x="4" y="8" width="40" height="26" rx="3"/><path d="M20 15l10 6-10 6zM16 42h16M24 34v8"/>',
+dub:'<rect x="17" y="4" width="14" height="24" rx="7"/><path d="M10 22a14 14 0 0 0 28 0M24 36v8M16 44h16"/>',
+rem:'<path d="M38 18A15 15 0 0 0 10 16M10 6v10h10M10 30a15 15 0 0 0 28 2M38 42V32H28"/>',
+mus:'<path d="M18 36V10l24-5v26"/><circle cx="12" cy="36" r="6"/><circle cx="36" cy="31" r="6"/>',
+glo:'<circle cx="24" cy="24" r="19"/><path d="M5 24h38M24 5c6 6 6 32 0 38M24 5c-6 6-6 32 0 38"/>',
+pl:'<path d="M44 30v-4L28 18V8a4 4 0 0 0-8 0v10L4 26v4l16-4v10l-5 4v2l9-2 9 2v-2l-5-4V26z"/>',
+clip:'<circle cx="11" cy="12" r="6"/><circle cx="11" cy="36" r="6"/><path d="M16 15l28 21M16 33l28-21"/>',
+sub:'<rect x="4" y="8" width="40" height="28" rx="4"/><path d="M11 22h10M25 22h12M11 29h18M33 29h4M16 36l-4 8 10-8"/>',
+ai:'<rect x="11" y="11" width="26" height="26" rx="4"/><rect x="18" y="18" width="12" height="12" rx="1"/><path d="M18 4v7M30 4v7M18 37v7M30 37v7M4 18h7M4 30h7M37 18h7M37 30h7"/>'};
+const RI=["film", "sat", "ott", "dub", "rem", "mus", "glo", "pl", "clip", "sub", "ai"],RC=[["var(--yellow)", "var(--orange)"], ["var(--blue)", "#4b5bff"], ["var(--red)", "var(--plum)"], ["var(--teal)", "var(--blue)"], ["var(--orange)", "var(--red)"], ["#c58bff", "var(--plum)"], ["#5ce1ff", "var(--teal)"], ["#9ad0ff", "var(--blue)"], ["var(--red)", "var(--orange)"], ["var(--yellow)", "var(--teal)"], ["#7cf5ff", "#b36bff"]];
+(()=>{const st=$('rs-st'),out=$('rs-out');
+const fr=(x,i,d)=>`<button class="rs-fr${d?' rs-dup':''}" role="listitem" style="--a:${RC[i][0]};--b:${RC[i][1]}" data-i="${i}"${d?' tabindex="-1" aria-hidden="true"':''} aria-label="${x[0]}: ${x[1]}"><span class="rs-n">FRAME ${String(i+1).padStart(2,'0')} · 35MM</span><span class="rs-ic" aria-hidden="true"><svg viewBox="0 0 48 48">${RP[RI[i]]}</svg></span><h4>${x[0]}</h4></button>`;
+st.innerHTML=SL.map((x,i)=>fr(x,i)).join('')+SL.map((x,i)=>fr(x,i,1)).join('');
+const f=[...st.children];
+function act(i){f.forEach(e=>e.classList.toggle('rs-on',+e.dataset.i===i));out.innerHTML=`<span class="mono">Right ${i+1} of 11</span><b>${SL[i][0]}</b><span>${SL[i][1]}</span>`}
+st.addEventListener('click',e=>{const b=e.target.closest('.rs-fr');if(b)act(+b.dataset.i)});
+st.addEventListener('focusin',e=>{const b=e.target.closest('.rs-fr');if(b)act(+b.dataset.i)});
+st.addEventListener('keydown',ev=>{const c=document.activeElement;if(!c.classList.contains('rs-fr'))return;let i=+c.dataset.i;if(ev.key==='ArrowRight')i=(i+1)%11;else if(ev.key==='ArrowLeft')i=(i+10)%11;else return;ev.preventDefault();f[i].focus()});
+act(0)})();
+const BO=[['Territory',['India','US','Worldwide']],['Language',['Hindi','English subtitled','Marathi']],['Medium',['OTT','Satellite TV','Theatrical']],['Time',['3 years','5 years','7 years']]];
+$('builder').innerHTML=BO.map((b,i)=>`<label><span class="mono">${b[0]}</span><select data-i="${i}">${b[1].map(o=>`<option>${o}</option>`).join('')}</select></label>`).join('');
+function deal(){const v=[...$('builder').querySelectorAll('select')].map(s=>s.value);$('deal').textContent=`Deal: ${v[2]} rights · ${v[1]} · ${v[0]} · ${v[3]}`;$('deal').animate&&!reduce&&$('deal').animate([{opacity:.3},{opacity:1}],300)}
+$('builder').addEventListener('change',deal);deal();
+document.querySelectorAll('.flip').forEach(f=>f.onclick=()=>f.setAttribute('aria-pressed',f.getAttribute('aria-pressed')!=='true'));
+// videos
+const V=[['Publicity rights','publicity-rights',0],['Workshop [English]','workshop-cinematic',0],['Workshop [Marathi]','workshop-final',0],['Queen Full Power: Why 50% IP Rights Weren\u2019t Enough to Stop the Film','queen',1],['AI Can Clone Your Voice. But Who Owns It?','clean-mock-2',1]];
+$('vg').innerHTML=V.map(v=>`<button class="${v[2]?'wide':''}" data-v="${v[1]}" data-t="${v[0]}" aria-label="Play ${v[0]}"><img src="assets/img/${v[1]}.jpg" alt="" loading="lazy"><span class="play">▶</span><span class="lab">${v[0]}</span></button>`).join('');
+
+function openImg(b,src,title){lastF=b;$('mt').textContent=title;mv.hidden=true;const mi=$('mi');mi.src=src;mi.alt=title;mi.hidden=false;modal.hidden=false;document.body.style.overflow='hidden';$('mx').focus()}
+function closeM(){mv.pause();mv.removeAttribute('src');mv.load();mv.hidden=false;$('mi').hidden=true;modal.hidden=true;document.body.style.overflow='';lastF&&lastF.focus()}
+$('vg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;lastF=b;$('mt').textContent=b.dataset.t;mv.src=`assets/video/${b.dataset.v}.mp4`;modal.hidden=false;document.body.style.overflow='hidden';$('mx').focus();mv.play().catch(()=>{})});
+$('mx').onclick=closeM;modal.addEventListener('click',e=>{if(e.target===modal)closeM()});
+document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape')closeM();if(e.key==='Tab'){const f=[$('mx'),mv.hidden?$('mx'):mv];const i=f.indexOf(document.activeElement);e.preventDefault();f[(i+1)%2].focus()}});
+// articles
+const AC={'Music and sampling':'orange','AI and copyright':'blue','Film rights and licensing':'red','Cinema and certification':'teal'};
+$('afil').innerHTML=['All',...Object.keys(AC)].map((c,i)=>`<button class="pill" aria-pressed="${i===0}" data-c="${c}">${c}</button>`).join('');
+$('ag').innerHTML=ARTS.map(a=>`<a class="card art" style="--c:var(--${AC[a.c]})" data-c="${a.c}" href="${a.u}" target="_blank" rel="noopener"><span class="mono">${esc(a.s)}</span><h3>${esc(a.t)}</h3><span class="go">Read on LinkedIn <span>↗</span></span></a>`).join('');
+$('afil').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;[...$('afil').children].forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('.art').forEach(a=>a.classList.toggle('hide',b.dataset.c!=='All'&&a.dataset.c!==b.dataset.c))});
+if(!reduce&&matchMedia('(hover:hover)').matches)document.querySelectorAll('.art').forEach(a=>{a.addEventListener('mousemove',e=>{const r=a.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;a.style.transform=`perspective(700px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateY(-4px)`});a.addEventListener('mouseleave',()=>a.style.transform='')});
+
+// passport hero
+(()=>{
+const S=[["Chain of title","Verified","o",58,58,-8,0],["Dubbing rights","Licensed","p",160,130,6,0],["Europe","SVOD","t",50,150,-4,1],["Music","Cleared","y",170,232,10,1],["AI content","Licence","p",56,250,6,0],
+["Latin America","TV","o",302,58,-10,0],["MENA","OTT","t",440,60,8,1],["Southeast Asia","AVOD","y",296,272,5,0],["Global","All media","o",448,266,-12,1]];
+const box=document.getElementById('pp-stamps'),book=document.getElementById('pp-book'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+S.forEach(([a,b,c,x,y,r,round])=>{const d=document.createElement('div');d.className='pp-stamp pp-'+c+(round?' pp-round':'');d.style.cssText=`left:${x}px;top:${y}px;--r:${r}deg`;d.innerHTML=a+'<small>'+b+'</small>';box.appendChild(d)});
+const els=[...box.children],fin=document.getElementById('pp-fin');box.appendChild(fin);
+function hit(el){el.classList.add('pp-on');if(rm)return;const R=el.offsetLeft+el.offsetWidth/2,T=el.offsetTop+el.offsetHeight/2;
+const g=document.createElement('div');g.className='pp-ring '+el.classList[1];g.style.cssText=`left:${R}px;top:${T}px`;box.appendChild(g);setTimeout(()=>g.remove(),800);
+const f=document.createElement('div');f.className='pp-flash';f.style.cssText=`--x:${R}px;--y:${T}px`;book.appendChild(f);setTimeout(()=>f.remove(),500)}
+function run(){els.forEach(e=>e.classList.remove('pp-on'));fin.classList.remove('pp-on');els.forEach((e,i)=>setTimeout(()=>hit(e),400+i*420));setTimeout(()=>{fin.classList.add('pp-on')},400+els.length*420+300);}
+if(rm){els.forEach(e=>e.classList.add('pp-on'));fin.classList.add('pp-on')}else{run();setInterval(run,11000)}
+// parallax
+const st=document.getElementById('pp-stage');const base=()=>getComputedStyle(book).transform;
+if(!rm&&matchMedia('(min-width:901px)').matches)st.addEventListener('mousemove',e=>{const b=st.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;book.style.transform=`rotateX(${14-y*16}deg) rotateY(${-16+x*22}deg) rotateZ(3deg)`});
+st.addEventListener('mouseleave',()=>book.style.transform='');
+// particles
+const c=document.getElementById('pp-pts'),x=c.getContext('2d');let P=[];function sz(){c.width=c.offsetWidth;c.height=c.offsetHeight;P=Array.from({length:70},()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.6+.3,v:Math.random()*.3+.05}))}sz();addEventListener('resize',sz);
+(function f(){x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.y-=p.v;if(p.y<0)p.y=c.height;x.fillStyle='rgba(247,200,120,'+(p.r/3)+')';x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()});if(!rm)requestAnimationFrame(f)})();
+})();
+</script>
+</body></html>
