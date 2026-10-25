@@ -74,7 +74,7 @@ h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.015em;text-wrap:ba
 @keyframes pop{from{opacity:0;transform:scale(.9)}}
 .conf{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:14px;margin-top:auto;padding-top:12px;border-top:1px dashed var(--line)}
 /* avails */
-.av{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}
+.av{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;align-items:start}
 .cert{padding:26px;background:linear-gradient(160deg,#f6f1e6,#e9e2d1);color:#1b2333;border-radius:18px;position:relative;box-shadow:0 30px 80px -30px rgba(0,0,0,.8);overflow:hidden}
 .cert::after{content:"";position:absolute;right:20px;bottom:20px;width:86px;height:86px;border-radius:50%;border:3px double var(--plum);opacity:.5}
 .cert header{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1b2333;padding-bottom:12px;margin-bottom:14px;gap:10px}
@@ -198,10 +198,20 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 .vg{grid-template-columns:repeat(6,1fr)}.vg button{grid-column:span 2}.vg button.wide{grid-column:span 3;aspect-ratio:16/9}
 @media(max-width:980px){.pa button,.pa button:nth-child(4),.pa button:nth-child(5){grid-column:span 3}.vg button{grid-column:span 3}.vg button.wide{grid-column:span 6}}
 @media(max-width:640px){.pa button,.pa button:nth-child(4),.pa button:nth-child(5){grid-column:1/-1;min-height:0}.pa .hc{max-height:120px;opacity:1}}
-.pg{all:unset;cursor:zoom-in;display:block;margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #c9bfa8;max-height:300px;position:relative}
+.pg{all:unset;cursor:zoom-in;display:block;margin-top:4px;border-radius:10px;overflow:hidden;border:1px solid #c9bfa8;position:relative;box-shadow:0 14px 34px -14px rgba(27,35,51,.55)}
+.ppanel{display:grid;grid-template-columns:minmax(200px,330px) 1fr;gap:0 22px;align-content:start}
+.ppanel>.pg{grid-column:1;grid-row:1/span 4}.ppanel>:not(.pg){grid-column:2}.ppanel>.pnav{align-self:end;grid-row:4}
+@media(max-width:560px){.ppanel{grid-template-columns:1fr}.ppanel>.pg,.ppanel>:not(.pg){grid-column:1;grid-row:auto}}
 .pg img{width:100%;display:block;transition:transform .5s}.pg:hover img{transform:scale(1.03)}.pg:focus-visible{outline:2px solid var(--orange)}
-.pg .zm{position:absolute;right:10px;bottom:10px;background:#1b2333;color:#f6f1e6;font:600 11px var(--mono);padding:6px 10px;border-radius:8px}
+.pg .zm{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;white-space:nowrap;background:linear-gradient(90deg,#ff7a1a,#ffb347);color:#1b2333;font:700 11px var(--mono);padding:8px 12px;border-radius:999px;box-shadow:0 6px 22px rgba(255,122,26,.45);animation:zmp 2s ease-in-out infinite}
+.pg .zm svg{width:16px;height:16px;flex:none}
+.pg .zm{z-index:2}.pg:hover .zm{animation:none;transform:translateX(-50%) scale(1.06)}
+@keyframes zmp{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.07)}}
+@media(prefers-reduced-motion:reduce){.pg .zm{animation:none}}
+.pg-hint{display:flex;gap:18px;flex-wrap:wrap;font:600 11px var(--mono);letter-spacing:.06em;color:#7a6f58;margin:10px 0 14px}
+.pg-hint b{color:#c8570a}
 .pnav{display:flex;justify-content:space-between;margin-top:12px}.pnav button{background:#1b2333;color:#f6f1e6;border:0;border-radius:8px;padding:8px 12px;font-weight:700}
+.pnav button:disabled{visibility:hidden}
 .modal img{max-width:min(100%,900px);max-height:86vh;border-radius:8px;background:#fff;overflow:auto}
 
 /* rights strip (rs-) */
@@ -356,7 +366,7 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 <div class="av reveal">
 <div class="cert" aria-label="Illustrative certificate layout"><span class="illu">SAMPLE</span>
 <header><b>Avails Certificate</b><span class="mono">Blank template</span></header>
-<div class="ptabs" role="tablist" id="ptabs" aria-label="Certificate parts"></div>
+<p class="pg-hint"><span><b>①</b> Pick a part A–H</span><span><b>②</b> Click the page to zoom</span><span><b>③</b> Use ← → to move on</span></p><div class="ptabs" role="tablist" id="ptabs" aria-label="Certificate parts"></div>
 <div class="ppanel" id="ppanel" role="tabpanel"></div>
 <div class="sig"><span>Seller</span><span>Practising advocate</span></div></div>
 <div class="who"><div class="row" role="group" aria-label="View for" id="whob"></div><div class="card who-panel" id="whop" aria-live="polite"></div></div>
@@ -470,7 +480,7 @@ arrows($('dlist'),selDoc,DOCS.length,()=>cur);$('q').addEventListener('input',re
 const PG=[1,1,2,2,2,2,3,3];const PARTS=[['Certificate details',['Certificate no.','Date of issue','Issued for']],['Rights holder details',['Name','Address','Authorised signatory']],['Content details',['Title','Format','Duration']],['Rights availability',['Territory','Exclusivity','Licence duration']],['Rights types available',['Rights type','Available','Notes']],['Language rights',['Dubbing','Subtitling','Languages']],['Encumbrances, existing licences and restrictions',['Existing licences','Restrictions','Encumbrances']],['Seller declaration',['Declaration','Seller','Date']]];
 let pc=0;$('ptabs').innerHTML=PARTS.map((p,i)=>`<button role="tab" id="pt${i}" aria-selected="${i===0}" tabindex="${i?-1:0}" aria-label="Part ${'ABCDEFGH'[i]}: ${p[0]}">${'ABCDEFGH'[i]}</button>`).join('');
 function selPart(i,f){pc=i;[...$('ptabs').children].forEach((b,k)=>{b.setAttribute('aria-selected',k===i);b.tabIndex=k===i?0:-1});if(f)$('ptabs').children[i].focus();const p=PARTS[i];
- $('ppanel').setAttribute('aria-labelledby','pt'+i);$('ppanel').innerHTML=`<span class="mono">Part ${'ABCDEFGH'[i]}</span><h4>${p[0]}</h4><button class="pg" id="pgb" aria-label="Zoom page ${PG[i]} of the sample certificate"><img src="assets/img/avails-p-${PG[i]}.jpg" alt="Sample Avails Certificate, page ${PG[i]}" style="object-fit:cover;object-position:top"><span class="zm">Page ${PG[i]} of 4 · Zoom</span></button><div class="pnav"><button id="pprev" ${i?'':'disabled'}>← Part ${'ABCDEFGH'[i-1]||''}</button><button id="pnext" ${i<7?'':'disabled'}>Part ${'ABCDEFGH'[i+1]||''} →</button></div>`;
+ $('ppanel').setAttribute('aria-labelledby','pt'+i);$('ppanel').innerHTML=`<span class="mono">Part ${'ABCDEFGH'[i]}</span><h4>${p[0]}</h4><button class="pg" id="pgb" aria-label="Zoom page ${PG[i]} of the sample certificate"><img src="assets/img/avails-p-${PG[i]}.jpg" alt="Sample Avails Certificate, page ${PG[i]}" style="object-fit:contain"><span class="zm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M16 16l5 5M10.5 7.5v6M7.5 10.5h6"/></svg>Click to zoom · page ${PG[i]} of 4</span></button><div class="pnav"><button id="pprev" ${i?'':'disabled'}>← Part ${'ABCDEFGH'[i-1]||''}</button><button id="pnext" ${i<7?'':'disabled'}>Part ${'ABCDEFGH'[i+1]||''} →</button></div>`;
  $('pprev').onclick=()=>i&&selPart(i-1);$('pnext').onclick=()=>i<7&&selPart(i+1);$('pgb').onclick=e=>openImg(e.currentTarget,`assets/img/avails-p-${PG[i]}.jpg`,'Avails Certificate · sample page '+PG[i])}
 $('ptabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)selPart([...$('ptabs').children].indexOf(b))});arrows($('ptabs'),selPart,8,()=>pc);selPart(0);
 const WHO=[['For buyers','👁','Verify ownership and authority to sell','Review one document to see who owns the film and who may sell it.'],['For sellers','↻','Reuse for every later licence','On Media Shippers and whenever the film is licensed again.'],['Accountability','✍','Signed by a practising advocate','Not self-certified by the seller.']];
