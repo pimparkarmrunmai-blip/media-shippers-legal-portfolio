@@ -320,9 +320,9 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 .sec{padding-block:48px 6px}
 .cf-st{height:360px}.cf-k{width:240px;height:290px;margin:-145px 0 0 -120px;gap:16px}.cf-k .ic{width:96px;height:96px}.cf-k .ic svg{width:48px;height:48px}.cf-k h4{font-size:25px}
 .faq .reveal{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
-@media(max-width:640px){.sec{padding-top:38px}.pg img{height:auto}.faq .reveal{grid-template-columns:1fr}.dx-list{display:flex;overflow-x:auto;gap:6px;padding-bottom:6px;scroll-snap-type:x mandatory}.dx-list button{flex:none;scroll-snap-align:start}.cf-st{height:330px}.vg button.wide{aspect-ratio:4/5;grid-column:auto}.vg button:last-child{grid-column:span 2;aspect-ratio:16/9}}
+@media(max-width:640px){.sec{padding-top:38px}.pg img{height:auto}.faq .reveal{grid-template-columns:1fr}.cf-st{height:330px}.vg button.wide{aspect-ratio:4/5;grid-column:auto}.vg button:last-child{grid-column:span 2;aspect-ratio:16/9}}
 @media(max-width:640px){.rules{grid-template-columns:1fr 1fr;gap:8px}.rules li{padding:12px;font-size:13px}}
-@media(min-width:981px){.dx{grid-template-columns:440px 1fr}.dx-list{grid-template-columns:1fr 1fr}.dx-list button{padding:10px 12px;font-size:13.5px}.dx-room{min-height:300px}}
+@media(min-width:981px){.dx-room{min-height:300px}}
 .sec-head h2{font-size:clamp(26px,3.6vw,42px)}.person{padding:18px;gap:10px}.who-panel .big{font-size:42px}
 </style><style>.qs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .qs{padding:20px;display:grid;gap:12px;align-content:start;background:linear-gradient(165deg,color-mix(in srgb,var(--c) 16%,var(--panel)),var(--panel) 65%);border-top:3px solid var(--c);transition:.3s}.qs:hover{transform:translateY(-6px);box-shadow:0 24px 60px -24px var(--c)}
@@ -334,7 +334,21 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 .qs-rows{display:grid;gap:6px}.qs-rows div{display:flex;justify-content:space-between;gap:8px;padding:7px 10px;border-radius:9px;background:rgba(255,255,255,.05)}.qs-rows span{color:var(--muted)}.qs-rows b{font-weight:600}
 .qs-demo .tagrow{display:flex;gap:6px;flex-wrap:wrap}.qs-demo .tagrow span{font:600 10px var(--mono);padding:5px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}.qs-demo .tagrow span.on{color:#fff;border-color:var(--c);background:color-mix(in srgb,var(--c) 30%,transparent)}
 .qs .ok{color:#4ade80}.qs .no{color:#ff6b81}
-@media(max-width:1100px){.qs-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.qs-grid{grid-template-columns:1fr}.qs p{min-height:0}}</style><style>.qs-wrap{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}.qs-top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:16px}.qs-top h3{margin:6px 0 0;font:800 28px var(--display)}.qs-top p{margin:0;color:var(--muted);max-width:420px}.qs-wrap .proto{margin-top:16px}</style></head><body>
+@media(max-width:1100px){.qs-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.qs-grid{grid-template-columns:1fr}.qs p{min-height:0}}</style><style>.qs-wrap{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}.qs-top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:16px}.qs-top h3{margin:6px 0 0;font:800 28px var(--display)}.qs-top p{margin:0;color:var(--muted);max-width:420px}.qs-wrap .proto{margin-top:16px}</style><style id="pa-compact">
+#practice.sec{padding-top:40px;padding-bottom:20px}
+#practice .sec-head{margin-bottom:14px}#practice .sec-head p{display:none}
+#practice .sec-head h2{font-size:clamp(24px,3vw,34px)}
+.pa{grid-template-columns:repeat(3,1fr)!important;gap:10px}
+.pa button,.pa button:nth-child(4),.pa button:nth-child(5){grid-column:auto!important;min-height:0!important;padding:14px 16px!important;display:grid!important;grid-template-columns:auto 1fr;align-items:center;gap:6px 12px!important;border-radius:14px}
+.pa .ico{font-size:30px!important;grid-row:span 2}
+.pa h3{font-size:clamp(16px,1.6vw,19px)!important;margin:0}
+.pa .mono{font-size:10px}
+.pa .hc{grid-column:1/-1;max-height:none!important;opacity:1!important;margin:2px 0 0!important;gap:5px!important}
+.pa .hc span{padding:3px 8px!important;font-size:11.5px!important}
+.pa button:hover{transform:translateY(-2px)}
+@media(max-width:820px){.pa{grid-template-columns:1fr!important}.pa button{grid-template-columns:auto 1fr}}
+</style>
+</head><body>
 <header class="nav"><div class="wrap"><a href="#top"><img src="assets/img/logo.png" alt="Media Shippers"></a>
 <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
 <nav aria-label="Main"><ul id="menu"><li><a href="#practice">Practice</a></li><li><a href="#documents">Documents</a></li><li><a href="#avails">Avails Certificate</a></li><li><a href="#services">Document Q&amp;A</a></li><li><a href="#reach">New markets</a></li><li><a href="#film-rights">Your film, your rights</a></li><li><a href="#videos">Videos</a></li><li><a href="#articles">Articles</a></li><li><a href="#team">Team</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></nav></div></header>
