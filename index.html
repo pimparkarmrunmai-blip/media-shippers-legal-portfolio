@@ -217,17 +217,24 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 .modal img{max-width:min(100%,900px);max-height:86vh;border-radius:8px;background:#fff;overflow:auto}
 
 /* rights strip (rs-) */
-.cf-vp{margin-inline:-28px;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.cf-st{height:440px;position:relative;perspective:1400px;overflow:hidden}
-.cf-k{--a:#fff;--b:#888;position:absolute;left:50%;top:50%;width:280px;height:340px;margin:-170px 0 0 -140px;border-radius:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:24px;background:linear-gradient(170deg,color-mix(in srgb,var(--a) 18%,var(--panel)),var(--panel) 60%) padding-box,linear-gradient(150deg,var(--a),var(--line) 50%,var(--b)) border-box;border:1px solid transparent;will-change:transform;color:var(--fg);font:inherit}
-.cf-k::before{content:"";position:absolute;inset:0 0 auto;height:5px;border-radius:22px 22px 0 0;background:linear-gradient(90deg,var(--a),var(--b))}
-.cf-k .ic{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;color:#fff;background:radial-gradient(circle at 30% 25%,var(--a),var(--b));box-shadow:0 0 50px -6px var(--a)}.cf-k .ic svg{width:60px;height:60px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.cf-k h4{margin:0;font:800 30px/1.05 var(--display);text-align:center}.cf-k .mono{color:var(--muted)}
-.cf-k.ctr{box-shadow:0 0 0 2px var(--a),0 30px 90px -20px var(--a),0 0 120px -40px var(--b)}
-.cf-k:focus-visible{outline:2px solid #fff}
-.cf-floor{position:absolute;left:50%;bottom:10px;width:min(700px,90%);height:60px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(247,181,0,.25),transparent);filter:blur(8px)}
+.rs-vp{position:relative;overflow:hidden;padding:26px 0;margin-inline:-28px;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.rs-vp::before,.rs-vp::after{content:"";position:absolute;left:0;right:0;height:16px;background:repeating-linear-gradient(90deg,transparent 0 14px,rgba(255,255,255,.14) 14px 26px,transparent 26px 40px);z-index:2}
+.rs-vp::before{top:2px}.rs-vp::after{bottom:2px}
+.rs-st{display:flex;gap:24px;width:max-content;animation:rs-sl 60s linear infinite;padding:0 12px}
+.rs-vp:hover .rs-st,.rs-vp:focus-within .rs-st{animation-play-state:paused}
+@keyframes rs-sl{to{transform:translateX(-50%)}}
+.rs-fr{--a:var(--blue);--b:var(--plum);flex:0 0 250px;height:300px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.01)),var(--panel);color:var(--fg);cursor:pointer;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:24px 18px;font:inherit;transition:transform .35s,box-shadow .35s,border-color .35s;overflow:hidden}
+.rs-fr::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--a),var(--b))}
+.rs-fr::after{content:"";position:absolute;width:220px;height:220px;top:-40px;left:15px;background:radial-gradient(circle,color-mix(in srgb,var(--a) 30%,transparent),transparent 65%);pointer-events:none}
+.rs-fr:hover,.rs-fr:focus-visible,.rs-fr.rs-on{transform:translateY(-10px) scale(1.03);border-color:var(--a);box-shadow:0 20px 50px -10px color-mix(in srgb,var(--a) 60%,transparent);outline:none}
+.rs-n{position:absolute;top:16px;left:18px;font:500 11px var(--mono);letter-spacing:.14em;color:var(--muted)}
+.rs-ic{width:96px;height:96px;border-radius:28px;display:grid;place-items:center;background:linear-gradient(140deg,var(--a),var(--b));box-shadow:0 0 34px color-mix(in srgb,var(--a) 60%,transparent),inset 0 0 0 1px rgba(255,255,255,.3);position:relative;z-index:1}
+.rs-ic svg{width:56px;height:56px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.rs-fr h4{margin:0;font:800 26px/1.1 var(--display);letter-spacing:-.015em;position:relative;z-index:1;text-align:center}
 .rs-cap{max-width:760px;margin:20px auto 28px;padding:16px 24px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:17px;min-height:60px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;text-align:center}
 .rs-cap b{color:var(--yellow);font:800 20px var(--display)}.rs-cap .mono{color:var(--muted);font-size:11px;letter-spacing:.14em}
+@media (prefers-reduced-motion:reduce){.rs-st{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.rs-st .rs-dup{display:none}.rs-vp{-webkit-mask:none;mask:none;margin-inline:0}.rs-fr{transition:none}}
+@media (max-width:600px){.rs-fr{flex-basis:200px;height:250px}.rs-ic{width:76px;height:76px}.rs-ic svg{width:44px;height:44px}.rs-fr h4{font-size:21px}.rs-vp{margin-inline:-18px}}
 /* passport hero (pp-) */
 .pp-wrap{max-width:1240px;margin:0 auto;padding:0 28px;width:100%}.pp-hero .hero-tiles{position:relative;margin:0 auto 46px}
 @media(max-width:600px){.pp-wrap{padding:0 18px}}
@@ -318,9 +325,8 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 @media(max-width:980px){.fr-row{grid-template-columns:1fr}.vg{grid-template-columns:repeat(2,1fr)}.vg button.wide{grid-column:span 2;aspect-ratio:16/9}}
 @media(max-width:640px){.sec{padding-top:44px}.check{grid-template-columns:1fr}.fr-row .builder{grid-template-columns:1fr 1fr}.take{grid-template-columns:repeat(3,1fr);gap:8px}.flip{height:150px}.flip .f{flex-direction:column;align-items:flex-start;gap:4px}.flip .f b{font-size:26px}.flip .f h3{font-size:14px}.flip .b{font-size:12px;padding:10px}.ag{grid-template-columns:1fr}.art{min-height:0}.pa button{min-height:0}}
 .sec{padding-block:48px 6px}
-.cf-st{height:360px}.cf-k{width:240px;height:290px;margin:-145px 0 0 -120px;gap:16px}.cf-k .ic{width:96px;height:96px}.cf-k .ic svg{width:48px;height:48px}.cf-k h4{font-size:25px}
-.faq .reveal{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
-@media(max-width:640px){.sec{padding-top:38px}.pg img{height:auto}.faq .reveal{grid-template-columns:1fr}.cf-st{height:330px}.vg button.wide{aspect-ratio:4/5;grid-column:auto}.vg button:last-child{grid-column:span 2;aspect-ratio:16/9}}
+.faq .reveal:not(.sec-head){display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+@media(max-width:640px){.sec{padding-top:38px}.pg img{height:auto}.faq .reveal:not(.sec-head){grid-template-columns:1fr}.vg button.wide{aspect-ratio:4/5;grid-column:auto}.vg button:last-child{grid-column:span 2;aspect-ratio:16/9}}
 @media(max-width:640px){.rules{grid-template-columns:1fr 1fr;gap:8px}.rules li{padding:12px;font-size:13px}}
 @media(min-width:981px){.dx-room{min-height:300px}}
 .sec-head h2{font-size:clamp(26px,3.6vw,42px)}.person{padding:18px;gap:10px}.who-panel .big{font-size:42px}
@@ -348,7 +354,7 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 .pa button:hover{transform:translateY(-2px)}
 @media(max-width:820px){.pa{grid-template-columns:1fr!important}.pa button{grid-template-columns:auto 1fr}}
 </style>
-</head><body>
+<style>#dealwrap{margin-top:14px}#dealwrap[hidden]{display:none!important}</style><style>@media(min-width:981px){.tg{grid-template-columns:repeat(3,1fr);max-width:1000px}}</style></head><body>
 <header class="nav"><div class="wrap"><a href="#top"><img src="assets/img/logo.png" alt="Media Shippers"></a>
 <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
 <nav aria-label="Main"><ul id="menu"><li><a href="#practice">Practice</a></li><li><a href="#documents">Documents</a></li><li><a href="#avails">Avails Certificate</a></li><li><a href="#services">Document Q&amp;A</a></li><li><a href="#reach">New markets</a></li><li><a href="#film-rights">Your film, your rights</a></li><li><a href="#videos">Videos</a></li><li><a href="#articles">Articles</a></li><li><a href="#team">Team</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></nav></div></header>
@@ -429,7 +435,8 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 <section class="sec" id="reach"><div class="wrap">
 <div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Reach new markets</span><h2>Content not working in your region?</h2></div>
 <div class="stepper reveal" role="tablist" id="stepper" aria-label="Steps"><i class="fill" id="sfill"></i></div>
-<div class="card step-panel reveal" id="spanel" aria-live="polite"></div></div></section>
+<div class="card step-panel reveal" id="spanel" aria-live="polite"></div>
+<div class="card blk" id="dealwrap" hidden style="--c:var(--yellow)"><span class="eyebrow">Build a deal: change one and it's a new deal</span><div class="builder" id="builder"></div><div class="deal" id="deal" aria-live="polite"></div><div class="card remake"><span class="mono">Remake rights</span><b>Sairat (2016)</b><span class="arr">→</span><b>Dhadak (2018)</b></div></div></div></section>
 
 <section class="sec" id="film-rights"><div class="wrap">
 <div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">From a talk · General information</span><h2>Your film, <span class="grad">your rights</span></h2><p>You made the film. Under Indian copyright law, the producer owns the film as a whole, but the script, music, lyrics, songs and performances each belong to their creators unless signed over in writing.</p></div>
@@ -440,12 +447,9 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 </div>
 <div class="card blk reveal" style="--c:var(--plum);margin-top:20px"><span class="eyebrow">Slice your film</span><h3>One film, many rights</h3>
 <p class="mono" style="color:var(--muted);margin:6px 0 0">Every frame is a separate right you can license. Hover to pause, click a right to read it.</p>
-<div class="cf-vp"><div class="cf-st" id="cf-st"></div></div><div class="rs-cap" id="rs-out" aria-live="polite"></div>
+<div class="rs-vp"><div class="rs-st" id="rs-st" role="list"></div></div><div class="rs-cap" id="rs-out" aria-live="polite"></div>
 </div>
-<div class="fr-row"><div class="card blk reveal" style="--c:var(--yellow)"><span class="eyebrow">Build a deal: change one and it's a new deal</span>
-<div class="builder" id="builder"></div><div class="deal" id="deal" aria-live="polite"></div>
-<div class="card remake"><span class="mono">Remake rights</span><b>Sairat (2016)</b><span class="arr">→</span><b>Dhadak (2018)</b></div></div>
-<div class="card blk reveal" style="--c:var(--blue)"><span class="eyebrow">AI training rights</span><h3>A separate right. Four rules.</h3>
+<div class="fr-row" style="grid-template-columns:1fr"><div class="card blk reveal" style="--c:var(--blue)"><span class="eyebrow">AI training rights</span><h3>A separate right. Four rules.</h3>
 <ol class="rules"><li><b>Check chain of title</b><span>Actor, music and script agreements must cover it, or get fresh written consent.</span></li><li><b>License, don't assign</b><span>Keep it non-exclusive.</span></li><li><b>Training only</b><span>No copying faces, voices, characters or story.</span></li><li><b>Define the fee</b><span>Per hour of footage, flat fee, or both.</span></li></ol></div></div>
 <div class="take reveal"><button class="flip" aria-pressed="false"><div class="in"><div class="f"><b>1</b><h3>Get it in writing</h3></div><div class="b">Especially music. An assignment must be in writing and signed.</div></div></button>
 <button class="flip" aria-pressed="false"><div class="in"><div class="f"><b>2</b><h3>Slice your rights</h3></div><div class="b">Including AI training. Don't sell the whole film in one deal.</div></div></button>
@@ -468,10 +472,11 @@ footer .wrap{display:grid;gap:12px}footer img{height:30px;width:auto}.disc{max-w
 <div class="tg reveal">
 <div class="card person"><div class="av-i">UG</div><h3>Uday Ghare</h3><div class="role">CEO</div><div class="links"><a href="mailto:uday.ghare@entertainmenttechnologists.com">Email</a><a href="https://www.linkedin.com/in/uday-ghare-6b72332/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
 <div class="card person"><div class="av-i">MP</div><h3>Mrunmai Pimparkar</h3><div class="role">Legal Counsel</div><div class="links"><a href="mailto:mrunmai.pimparkar@entertainmenttechnologists.com">Email</a><a href="https://www.linkedin.com/in/mrunmai-pimparkar-aa015a219/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+<div class="card person"><div class="av-i">SS</div><h3>Shikhar Sood</h3><div class="role">Content Partnership Head</div><div class="links"><a href="mailto:shikhar.sood@mediashippers.com">Email</a><a href="https://www.linkedin.com/in/shikhar-sood-mrkt007/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
 </div></div></section>
 
 <section class="sec faq" id="faq"><div class="wrap">
-<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">FAQ</span><h2>FAQ</h2></div>
+<div class="sec-head reveal"><div class="speed"><i></i><i></i><i></i></div><span class="eyebrow">Common questions</span><h2>FAQ</h2></div>
 <div class="reveal"><details><summary>What areas of law does this cover?</summary><div class="blank"></div></details>
 <details><summary>How does an engagement begin?</summary><div class="blank"></div></details>
 <details><summary>How are fees determined?</summary><div class="blank"></div></details>
@@ -551,7 +556,7 @@ let si=0;$('stepper').insertAdjacentHTML('beforeend',ST.map((s,i)=>`<button role
 const sb=[...$('stepper').querySelectorAll('button')];
 function selS(i,f){si=i;sb.forEach((b,k)=>{b.setAttribute('aria-selected',k===i);b.classList.toggle('done',k<i);b.tabIndex=k===i?0:-1});if(f)sb[i].focus();$('sfill').style.width=(80*i/4)+'%';
  $('spanel').innerHTML=`<div><span class="mono">Step ${i+1} of 5</span><h3>${ST[i][0]}</h3><p>${ST[i][1]}</p></div>`+(i<4?`<button class="btn" id="snext">Next step →</button>`:`<a class="btn solid" href="#contact">Contact</a>`);
- const n=$('snext');if(n)n.onclick=()=>selS(i+1)}
+ const n=$('snext');if(n)n.onclick=()=>selS(i+1);$('dealwrap').hidden=i!==3}
 $('stepper').addEventListener('click',e=>{const b=e.target.closest('button');if(b)selS(sb.indexOf(b))});arrows($('stepper'),selS,5,()=>si);selS(0);
 // checklist
 const CK=["Writer's agreement (script assignment)","Director's agreement","Music agreements with composer, lyricist and singers","Actor agreements, including dubbing and AI use","Crew and technician agreements","CBFC certificate","Title registration","Copyright registration"];
@@ -572,21 +577,15 @@ clip:'<circle cx="11" cy="12" r="6"/><circle cx="11" cy="36" r="6"/><path d="M16
 sub:'<rect x="4" y="8" width="40" height="28" rx="4"/><path d="M11 22h10M25 22h12M11 29h18M33 29h4M16 36l-4 8 10-8"/>',
 ai:'<rect x="11" y="11" width="26" height="26" rx="4"/><rect x="18" y="18" width="12" height="12" rx="1"/><path d="M18 4v7M30 4v7M18 37v7M30 37v7M4 18h7M4 30h7M37 18h7M37 30h7"/>'};
 const RI=["film", "sat", "ott", "dub", "rem", "mus", "glo", "pl", "clip", "sub", "ai"],RC=[["var(--yellow)", "var(--orange)"], ["var(--blue)", "#4b5bff"], ["var(--red)", "var(--plum)"], ["var(--teal)", "var(--blue)"], ["var(--orange)", "var(--red)"], ["#c58bff", "var(--plum)"], ["#5ce1ff", "var(--teal)"], ["#9ad0ff", "var(--blue)"], ["var(--red)", "var(--orange)"], ["var(--yellow)", "var(--teal)"], ["#7cf5ff", "#b36bff"]];
-(()=>{const st=$('cf-st'),out=$('rs-out');const N=11,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function act(i){out.innerHTML=`<span class="mono">Right ${String(i+1).padStart(2,'0')} / 11</span><b>${SL[i][0]}</b><span>${SL[i][1]}</span>`}
-st.innerHTML=SL.map((x,i)=>`<button class="cf-k" data-i="${i}" style="--a:${RC[i][0]};--b:${RC[i][1]}" aria-label="${x[0]}: ${x[1]}"><span class="mono">Right ${String(i+1).padStart(2,'0')} / 11</span><span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48">${RP[RI[i]]}</svg></span><h4>${x[0]}</h4></button>`).join('')+'<div class="cf-floor"></div>';
-const K=[...st.querySelectorAll('.cf-k')];let t=0,tgt=null,hov=false,last=performance.now(),cur=-1,vis=true,S=1;
-const fit=()=>{S=Math.max(.5,Math.min(1,st.clientWidth/820));st.style.height=Math.round(360*Math.max(.8,S))+'px'};fit();addEventListener('resize',fit);
-new IntersectionObserver(en=>vis=en[0].isIntersecting).observe(st);
-function draw(){K.forEach((k,i)=>{let r=((i-t)%N+N)%N;if(r>N/2)r-=N;const a=Math.abs(r);const x=(Math.sign(r)*Math.min(a,1)*250+Math.sign(r)*Math.max(a-1,0)*150)*S;
-k.style.transform=`translateX(${x}px) translateZ(${-a*170*S}px) rotateY(${-Math.max(-1,Math.min(1,r))*42}deg) scale(${(a<.5?1.12-a*.24:1)*S})`;k.style.zIndex=100-Math.round(a*10);k.style.opacity=a>4.3?Math.max(0,5.3-a):1;k.style.filter=`brightness(${1-Math.min(a,3)*.18})`;k.classList.toggle('ctr',a<.5);k.tabIndex=a<.5?0:-1});
-const c=((Math.round(t)%N)+N)%N;if(c!==cur&&tgt===null){cur=c;act(c)}}
-function loop(n){const dt=Math.min(.1,(n-last)/1000);last=n;if(vis){if(tgt!==null){const d=tgt-t;t+=d*Math.min(1,dt*6);if(Math.abs(d)<.002){t=tgt;tgt=null}}else if(!hov&&!RM)t+=dt/2.6;draw()}requestAnimationFrame(loop)}
-st.onmouseenter=()=>hov=true;st.onmouseleave=()=>hov=false;st.addEventListener('focusin',()=>hov=true);st.addEventListener('focusout',()=>hov=false);
-function go(i){let r=((i-t)%N+N)%N;if(r>N/2)r-=N;tgt=t+r;cur=i;act(i)}
-st.onclick=e=>{const b=e.target.closest('.cf-k');if(b)go(+b.dataset.i)};
-st.addEventListener('keydown',ev=>{if(ev.key==='ArrowRight'||ev.key==='ArrowLeft'){ev.preventDefault();const c=((Math.round(t)%N)+N)%N;const i=(c+(ev.key==='ArrowRight'?1:N-1))%N;go(i);setTimeout(()=>K[i].focus(),0)}});
-act(0);requestAnimationFrame(loop)})();
+(()=>{const st=$('rs-st'),out=$('rs-out');
+const fr=(x,i,d)=>`<button class="rs-fr${d?' rs-dup':''}" role="listitem" style="--a:${RC[i][0]};--b:${RC[i][1]}" data-i="${i}"${d?' tabindex="-1" aria-hidden="true"':''} aria-label="${x[0]}: ${x[1]}"><span class="rs-n">FRAME ${String(i+1).padStart(2,'0')} · 35MM</span><span class="rs-ic" aria-hidden="true"><svg viewBox="0 0 48 48">${RP[RI[i]]}</svg></span><h4>${x[0]}</h4></button>`;
+st.innerHTML=SL.map((x,i)=>fr(x,i)).join('')+SL.map((x,i)=>fr(x,i,1)).join('');
+const f=[...st.children];
+function act(i){f.forEach(e=>e.classList.toggle('rs-on',+e.dataset.i===i));out.innerHTML=`<span class="mono">Right ${i+1} of 11</span><b>${SL[i][0]}</b><span>${SL[i][1]}</span>`}
+st.addEventListener('click',e=>{const b=e.target.closest('.rs-fr');if(b)act(+b.dataset.i)});
+st.addEventListener('focusin',e=>{const b=e.target.closest('.rs-fr');if(b)act(+b.dataset.i)});
+st.addEventListener('keydown',ev=>{const c=document.activeElement;if(!c.classList.contains('rs-fr'))return;let i=+c.dataset.i;if(ev.key==='ArrowRight')i=(i+1)%11;else if(ev.key==='ArrowLeft')i=(i+10)%11;else return;ev.preventDefault();f[i].focus()});
+act(0)})();
 const BO=[['Territory',['India','US','Worldwide']],['Language',['Hindi','English subtitled','Marathi']],['Medium',['OTT','Satellite TV','Theatrical']],['Time',['3 years','5 years','7 years']]];
 $('builder').innerHTML=BO.map((b,i)=>`<label><span class="mono">${b[0]}</span><select data-i="${i}">${b[1].map(o=>`<option>${o}</option>`).join('')}</select></label>`).join('');
 function deal(){const v=[...$('builder').querySelectorAll('select')].map(s=>s.value);$('deal').textContent=`Deal: ${v[2]} rights · ${v[1]} · ${v[0]} · ${v[3]}`;$('deal').animate&&!reduce&&$('deal').animate([{opacity:.3},{opacity:1}],300)}
